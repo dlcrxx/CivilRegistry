@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $_SESSION['no_father'] = isset($_POST['no_father']) ? 'yes' : 'no';
+    $_SESSION['father-first-name'] = $_POST['father-first-name'] ?? '';
+    $_SESSION['father-middle-name'] = $_POST['father-middle-name'] ?? '';
+    $_SESSION['father-last-name'] = $_POST['father-last-name'] ?? '';
+
+    header("Location: mother.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +63,7 @@
         <div class="form-title">
             <h3>Please provide the following information below</h3>
         </div>
-        <form method="post" action="mother.php">
+        <form method="post" action="">
             <div class="form-p">
                 <p>Father Information</p>
             </div>

@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $_SESSION['mother-marital-status'] = $_POST['mother-marital-status'] ?? '';
+    $_SESSION['mother-first-name'] = $_POST['mother-first-name'] ?? '';
+    $_SESSION['mother-middle-name'] = $_POST['mother-middle-name'] ?? '';
+    $_SESSION['mother-last-name'] = $_POST['mother-last-name'] ?? '';
+
+    header("Location: birth-place.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,16 +63,16 @@
         <div class="form-title">
             <h3>Please provide the following information below</h3>
         </div>
-        <form action="birth-place.php" method="post">
+        <form method="post">
             <div class="form-p">
                 <p>Mother Information</p>
             </div>
             <div class="form-group-check">
                 <label class="input-label">Status</label><br>
                  <div class="marital-status-container">
-                    <input type="radio" id="mother-marital-married" name="mother-marital-status">
+                    <input type="radio" id="mother-marital-married" name="mother-marital-status" value="Married">
                     <label>Married</label><br>
-                    <input type="radio" id="mother-marital-single" name="mother-marital-status">
+                    <input type="radio" id="mother-marital-single" name="mother-marital-status" value="Single">
                     <label>Single</label>
                 </div>
             </div>

@@ -66,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <div class="form-title">
             <h3>Please provide the following information below</h3>
         </div>
-        <form method="post" action="father.php">
+        <form method="post" action="">
             <div class="form-p">
                 <p>Personal Information</p>
             </div>

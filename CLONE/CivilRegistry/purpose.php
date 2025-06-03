@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $_SESSION['selectPurpose'] = $_POST['selectPurpose'] ?? '';
+    $_SESSION['birth_province'] = $_POST['birth_province'] ?? '';
+    $_SESSION['birth_municipal'] = $_POST['birth_municipal'] ?? '';
+
+    header("Location: delivery-details.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +62,7 @@
         <div class="form-title">
             <h3>Please provide the following information below</h3>
         </div>
-         <form action="delivery-details.php" method="post">
+         <form method="post">
             <div class="form-p">
                 <p>Purpose of Request</p>
             </div>

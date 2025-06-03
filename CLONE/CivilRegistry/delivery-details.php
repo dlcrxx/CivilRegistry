@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $_SESSION['recipient-name'] = $_POST['recipient-name'] ?? '';
+    $_SESSION['streetAddress'] = $_POST['streetAddress'] ?? '';
+    $_SESSION['subAddress'] = $_POST['subAddress'] ?? '';
+    $_SESSION['selectBarangay'] = $_POST['selectBarangay'] ?? '';
+    $_SESSION['contact'] = $_POST['contact'] ?? '';
+    $_SESSION['email-address'] = $_POST['email-address'] ?? '';
+    $_SESSION['payment'] = $_POST['payment'] ?? '';
+    $_SESSION['controlNum'] = $_POST['controlNum'] ?? '';
+
+    header("Location: review.php");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +67,7 @@
         <div class="form-title">
             <h3>Please provide the following information below</h3>
         </div>
-        <form action="payment.php" method="post">
+        <form method="post">
             <div class="form-p">
                 <p>Delivery Information</p>
             </div>
@@ -111,7 +130,7 @@
             </div>
             <div class="form-group">
                 <label class="input-label" id="name-recipient">Control Number</label>
-                <input class="input-value" type="text" id="controlNumber" placeholder="Enter your number" autocomplete="off">
+                <input class="input-value" type="text" id="controlNumber" placeholder="Enter your number" autocomplete="off" name="controlNum">
             </div>
             <div class="submit-btn-birth">
                 <button id="delivery-back" type="button">Back</button>

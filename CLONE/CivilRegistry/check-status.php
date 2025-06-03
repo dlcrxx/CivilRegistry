@@ -116,6 +116,7 @@
             flex-direction: column;
             align-items: center;
         }
+    }
 </style>
     <body>
         <!----Header----->
@@ -132,10 +133,10 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle">Civil Registry Documents</a>
                                 <div class="dropdown-box">
-                                    <a href="#">Birth Certificate</a>
-                                    <a href="#">Marriage Certificate</a>
-                                    <a href="#">CENOMAR</a>
-                                    <a href="#">Death Certificate</a>
+                                    <a href="../CivilRegistry/birth-cert.html">Birth Certificate</a>
+                                    <a href="../CivilRegistry/marriage-cert.html">Marriage Certificate</a>
+                                    <a href="../CivilRegistry/cenomar.html">CENOMAR</a>
+                                    <a href="../CivilRegistry/death-cert.html">Death Certificate</a>
                                 </div>
                             </li>
                             <li class="dropdown">
@@ -156,7 +157,7 @@
             <h2>Check the Status of Your Order</h2>
             <p>We value your time and aim to provide clear updates on the delivery status of your order.</p>
             <div class="tracker-box">
-                <input type="text" placeholder="Enter 10-digit request number">
+                <input type="text" placeholder="Enter reference number">
                 <button>Check Status</button>
             </div>
         </section>
@@ -220,5 +221,6 @@
             </div>
         </footer>
         <script src="index.js"></script>
+        <script src="check-status.js"></script>
     </body>
 </html>
