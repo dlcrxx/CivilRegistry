@@ -15,6 +15,13 @@ session_start();
      <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
+    <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "-nPFpDZ5zrhCxbyMt",
+      });
+    })();
+</script>
 </head>
 <body>
       <!----Header----->
@@ -58,6 +65,7 @@ session_start();
         <div class="review-content">
             <div class="personal-info">
                 <h3>Personal Information</h3>
+                <p><strong>Type of Document:</strong> <?= htmlspecialchars( $_SESSION['typeOfcert']) ?></p>
                 <p><strong>First Name:</strong> <?= htmlspecialchars($_SESSION['first-name']) ?></p>
                 <p><strong>Middle Name:</strong> <?= htmlspecialchars($_SESSION['middle-name']) ?></p>
                 <p><strong>Last Name:</strong> <?= htmlspecialchars($_SESSION['last-name']) ?></p>
@@ -88,7 +96,7 @@ session_start();
                 <h3>Birth Place</h3>
                 <p><strong>Birth Country:</strong> <?= htmlspecialchars($_SESSION['birth_country']) ?></p>
                 <p><strong>Birth Province:</strong> <?= htmlspecialchars($_SESSION['birth_province']) ?></p>
-                <p><strong>Birth Municipality:</strong> <?= htmlspecialchars($_SESSION['birth_municipal']) ?></p>
+                <p><strong>Birth Municipal:</strong> <?= htmlspecialchars($_SESSION['birth_municipal']) ?></p>
             </div>
             <div class="purpose">
                 <h3>Purpose of Request</h3>
@@ -107,11 +115,16 @@ session_start();
             </div>
             <div class="buttons">
                 <input type="button" value="Back" id="review-back-btn">
-                <input type="submit" value="Submit" id="submit-review-btn">
+                <input type="button" value="Submit" id="submit-review-btn">
             </div>
         </div>
         
     </div>
+    <script>
+        const recipientName = <?= json_encode($_SESSION['recipient-name']) ?>;
+        const emailAddress = <?= json_encode($_SESSION['email-address']) ?>;
+        const typeOfDoc = <?= json_encode($_SESSION['typeOfcert']) ?>;
+    </script>
 
     <script src="review.js"></script>
     <script src="index.js"></script>

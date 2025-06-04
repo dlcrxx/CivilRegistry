@@ -1,44 +1,32 @@
-const docBtn = document.querySelectorAll('.document-type button');
-
 let selectedDocument = '';
 
-docBtn.forEach(button => {
-    button.addEventListener('click', function(){
-        docBtn.forEach(btn => btn.classList.remove('selected'));
+function selectType(type, event) {
+    event.preventDefault(); // Prevent form/button default behavior
+    selectedDocument = type;
+    document.getElementById('typeOfcert').value = type;
 
-        this.classList.add('selected');
-
-        selectedDocument = this.textContent.trim();
-        console.log("Selected document:", selectedDocument);
-    })
-})
-
-document.getElementById('type-back-btn').onclick = function (){
-    window.history.back();
+    // Highlight the selected button
+    document.querySelectorAll('.document-type button').forEach(btn => btn.classList.remove('selected'));
+    event.target.classList.add('selected');
 }
 
-document.getElementById('choose-type-submit').onclick = function (){
-   const keepCheck = document.getElementById('TermsandPolicy').checked;
+document.getElementById('type-back-btn').onclick = function () {
+    window.history.back();
+};
 
-     if(!keepCheck){
+document.getElementById('chooseTypeofDoc').onsubmit = function (e) {
+    const agreed = document.getElementById('TermsandPolicy').checked;
+    const selected = document.getElementById('typeOfcert').value;
+
+    if (!agreed) {
         swal("Invalid Request", "Please Agree with Terms and Policy", "warning");
+        e.preventDefault();
         return;
     }
 
-    if(selectedDocument == "Birth Certificate"){
-        window.location.href = 'birth-certificate.php';
-    }
-    else if (selectedDocument == "Marriage Certificate"){
-        window.location.href = 'marriage-certificate.php';
-    }
-    else if(selectedDocument == "Death Certificate"){
-        window.location.href ='death-certificate.php';
-    }
-    else if(selectedDocument == "Cenomar"){
-        window.location.href ='../CENOMAR/personalinfo.php';
-    }
-    else{
+    if (!selected) {
         swal("Invalid Request", "Please choose type of document", "warning");
+        e.preventDefault();
+        return;
     }
-
-}
+};

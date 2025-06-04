@@ -1,3 +1,30 @@
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['typeOfcert'] = $_POST['typeOfcert'] ?? '';
+
+    switch ($_SESSION['typeOfcert']) {
+        case 'Birth Certificate':
+            header("Location: birth-certificate.php");
+            break;
+        case 'Marriage Certificate':
+            header("Location: marriage-certificate.php");
+            break;
+        case 'Death Certificate':
+            header("Location: death-certificate.php");
+            break;
+        case 'Cenomar':
+            header("Location: ../CENOMAR/personalinfo.php");
+            break;
+        default:
+            header("Location: choose-type.php");
+            break;
+    }
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +34,6 @@
     <link rel="icon" href="android-chrome-192x192.png">
     <title>eSertipiko Marikina: Online Registration for Civil Documents</title>
 </head>
-<body>
 <body>
     <!----Header----->
     <div class="sticky-header">
@@ -45,20 +71,26 @@
     <div class="choose-document-type">
         <h3>Choose document type</h3>
         <p>What type of document would you like to process?</p>
-        <div class="document-type">
-            <button id="btn-birth">Birth Certificate</button>
-            <button id="btn-marriage">Marriage Certificate</button>
-            <button id="btn-death">Death Certificate</button>
-            <button id="btn-cenomar">Cenomar</button>
-        </div>
-        <div class="termsandPolicy">
-        <input type="checkbox" id="TermsandPolicy">
-            <label>I accept the <a href="#">Terms and Conditions</a>. </label>
-        </div>
-        <div class="choose-type-submit">
-            <button id="type-back-btn">Back</button>
-            <button id="choose-type-submit">Continue</button>
-        </div>
+        <form method="post" id="chooseTypeofDoc">
+            <input type="hidden" name="typeOfcert" id="typeOfcert">
+
+            <div class="document-type">
+                <button id="btn-birth" onclick="selectType('Birth Certificate', event)">Birth Certificate</button>
+                <button id="btn-marriage" onclick="selectType('Marriage Certificate', event)">Marriage Certificate</button>
+                <button id="btn-death" onclick="selectType('Death Certificate', event)">Death Certificate</button>
+                <button id="btn-cenomar" onclick="selectType('Cenomar', event)">Cenomar</button>
+            </div>
+
+            <div class="termsandPolicy">
+            <input type="checkbox" id="TermsandPolicy">
+                <label>I accept the <a href="#">Terms and Conditions</a>. </label>
+            </div>
+
+            <div class="choose-type-submit">
+                <button type="button" id="type-back-btn">Back</button>
+                <button type="submit" id="choose-type-submit">Continue</button>
+            </div>
+        </form>
     </div>
 
     <footer class="footer">

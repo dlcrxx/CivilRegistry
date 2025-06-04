@@ -3,9 +3,7 @@ session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['selectPurpose'] = $_POST['selectPurpose'] ?? '';
-    $_SESSION['birth_province'] = $_POST['birth_province'] ?? '';
-    $_SESSION['birth_municipal'] = $_POST['birth_municipal'] ?? '';
-
+    
     header("Location: delivery-details.php");
     exit();
 }

@@ -79,7 +79,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
              </div>
               <div class="submit-btn-birth">
                 <button id="birth-place-back" type="button">Back</button>
-                <button id="birth-place-btn">Continue</button>
+                <button id="birth-place-btn" type="submit">Continue</button>
             </div>
          </form>
     </div>
