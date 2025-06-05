@@ -129,7 +129,7 @@
                     <nav>
                         <ul>
                             <li><a href="check-status.php">Check Status</a></li>
-                            <li><a href="payment-method.php">Payment Method</a></li>
+                            <li><a href="payments.html">Payment Method</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle">Civil Registry Documents</a>
                                 <div class="dropdown-box">

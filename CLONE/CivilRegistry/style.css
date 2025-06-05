@@ -93,7 +93,7 @@ html body{
     height: 88vh;
     width: 100vw;
     max-width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(marikina.jpg);
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(../images/marikina.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;

@@ -28,7 +28,7 @@
                 <nav>
                     <ul>
                         <li><a href="check-status.php" class="select">Check Status</a></li>
-                        <li><a href="payment-method.php" class="select">Payment Method</a></li>
+                        <li><a href="payments.html" class="select">Payment Method</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" class="select">Civil Registry Documents</a>
                             <div class="dropdown-box">

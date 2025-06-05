@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="android-chrome-192x192.png">
+    <link rel="icon" href="../images/android-chrome-192x192.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>eSertipiko Marikina: Online Registration for Civil Documents</title>
 </head>
@@ -19,7 +19,7 @@
             <nav>
                 <ul>
                     <li><a href="check-status.php" class="select">Check Status</a></li>
-                    <li><a href="payment-method.php" class="select">Payment Method</a></li>
+                    <li><a href="payments.html" class="select">Payment Method</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Civil Registry Documents</a>
                         <div class="dropdown-box">
@@ -60,13 +60,13 @@
         <div class="appointment-selection" id="appointment">
             <div class="selection-container">
                 <a href="walk-in-appoinment.php">
-                    <img src="walk-in.png">
+                    <img src="../images/walk-in.png">
                     <h3>Walk-in</h3>
                 </a>
             </div>
             <div class="selection-container">
                 <a href="choose-type.php">
-                    <img src="delivery.png">
+                    <img src="../images/delivery.png">
                     <h3>Delivery</h3>
                 </a>
             </div>
@@ -78,25 +78,25 @@
         <p>You can request these documents through this portal.</p>
         <div class="certificate-container">
             <div class="certificate">
-                <img src="birth-certificate.png">
+                <img src="../images/birth-certificate.png">
                 <h3>Birth Certificate</h3>
                 <p>A legal document confirming a person's birth, including their name, birth date, place, and parent details.</p>
                 <button class="btn-certificate" id="birth-certificate">Order now</button>
             </div>
             <div class="certificate">
-                <img src="marriage-certificate.png">
+                <img src="../images/marriage-certificate.png">
                 <h3>Marriage Certificate</h3>
                 <p>A legal record of a couple’s marriage, including their ames, and the date and place of the ceremony. </p>
                 <button class="btn-certificate" id="marriage-certificate">Order now</button>
             </div>
             <div class="certificate">
-                <img src="death-certificate.png">
+                <img src="../images/death-certificate.png">
                 <h3>Death Certificate</h3>
                 <p>An official document that certifies a person's death, providing key details such as the date, time, place, and cause of death.  </p>
                 <button class="btn-certificate" id="death-certificate">Order now</button>
             </div>
             <div class="certificate">
-                <img src="cenomar.png">
+                <img src="../images/cenomar.png">
                 <h3>CENOMAR</h3>
                 <p>A certification issued to prove that a person has never been married or that no marriage records exist under their name.</p>
                 <button class="btn-certificate" id="cenomar">Order now</button>
