@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="birth-cert.css">
-    <link rel="icon" href="android-chrome-192x192.png">
+    <link rel="icon" href="../images/android-chrome-192x192.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>eSertipiko Marikina: Online Registration for Civil Documents</title>
     <script type="text/javascript"
@@ -135,7 +135,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             </div>
         </form>
     </div>
-    <script> emailAdd = <?= json_encode($_SESSION['email-address']) ?>; </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="delivery.js"></script> 
 </body>

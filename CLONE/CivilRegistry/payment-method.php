@@ -78,11 +78,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         <div class="form-group-payment-container">
              <div class="form-group-payment" data-type="online">
-                <img src="online-payment.png" alt="Online Payment">
+                <img src="../images/online-payment.png" alt="Online Payment">
                 <h3>Online Payment</h3>
             </div>
             <div class="form-group-payment" data-type="otc">
-                <img src="over-the-counter.png" alt="Over-the-Counter">
+                <img src="../images/over-the-counter.png" alt="Over-the-Counter">
                 <h3>Over-the-counter</h3>
             </div>
         </div>

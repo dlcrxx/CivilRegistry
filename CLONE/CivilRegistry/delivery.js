@@ -9,17 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return ref;
     }
-
-    function sendRefNum() {
-        const reference = generateNumericReference();
-        localStorage.setItem('referenceNumber', reference);
-        let parms = {
-        email: emailAdd,
-        reference_num: reference
-    };
-    return emailjs.send('service_mzloflf', 'template_66foy5l', parms);
-    console.log(reference);
-}
+    
+     
     deliveryBtn.addEventListener("click", function (event) {
         event.preventDefault(); // Prevent form from submitting immediately
 
@@ -29,6 +20,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const barangay = document.getElementById("selectBarangay").value;
         const contact = document.getElementById("contact-value").value.trim();
         const email = document.getElementById("email-address").value.trim();
+
+         function sendRefNum() {
+            const reference = generateNumericReference();
+            localStorage.setItem('referenceNumber', reference);
+            let parms = {
+            email: email,
+            reference_num: reference
+        };
+
+        return emailjs.send('service_mzloflf', 'template_66foy5l', parms);
+    
+} 
 
         // Check for required fields
         if (!recipientName || !streetAddress || !barangay || barangay === "Select Barangay" ||
