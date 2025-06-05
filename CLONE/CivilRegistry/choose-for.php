@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (isset($_GET['for'])) {
+    $_SESSION['for'] = $_GET['for'];
+    header("Location: delivery.php");
+    exit();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,13 +62,13 @@
         </div>
         <div class="someone-self-container">
             <div class="choices-container">
-                <a href="choose-type.php?type=personal">
+                <a href="process-for.php?for=personal">
                     <img src="personal.png">
                     <h3>Personal</h3>
                 </a>
             </div>
             <div class="choices-container">
-                <a href="choose-type.php?type=someone">
+                <a href="process-for.php?for=someone">
                     <img src="someone.png">
                     <h3>For someone else</h3>
                 </a>
@@ -99,6 +111,5 @@
         </div>
     </footer>
     <script src="index.js"></script>
-    <script src="delivery.js"></script> 
 </body>
 </html>

@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['payment'] = $_POST['payment'] ?? '';
     $_SESSION['controlNum'] = $_POST['controlNum'] ?? '';
 
-    header("Location: review.php");
+    header("Location: payment-method.php");
     exit();
 }
 
@@ -27,6 +27,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <link rel="icon" href="android-chrome-192x192.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>eSertipiko Marikina: Online Registration for Civil Documents</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "jSlqx2FnCw9rucgTM",
+      });
+   })();
+</script>
 </head>
 <body>
     <!----Header----->
@@ -118,26 +128,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <label class="input-label">Email Address</label>
                 <input class="input-value" type="text" id="email-address" placeholder="Email Address" name="email-address" autocomplete="off">
             </div>
-              <div class="form-group">
-                <label class="input-label">Payment Method</label>
-                <select class="input-value" id="selectPayment" name="payment">
-                    <option selected disabled>Select Payment</option>
-                    <option>Gcash</option>
-                    <option>Maya</option>
-                    <option>VISA</option>
-                    <option>BayadOnline</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="input-label" id="name-recipient">Control Number</label>
-                <input class="input-value" type="text" id="controlNumber" placeholder="Enter your number" autocomplete="off" name="controlNum">
-            </div>
+           
             <div class="submit-btn-birth">
                 <button id="delivery-back" type="button">Back</button>
                 <button id="delivery-birth-btn" type="submit">Continue</button>
             </div>
         </form>
     </div>
+    <script> emailAdd = <?= json_encode($_SESSION['email-address']) ?>; </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="delivery.js"></script> 
 </body>

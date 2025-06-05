@@ -65,7 +65,7 @@
                 </a>
             </div>
             <div class="selection-container">
-                <a href="choose-for.php">
+                <a href="choose-type.php">
                     <img src="delivery.png">
                     <h3>Delivery</h3>
                 </a>

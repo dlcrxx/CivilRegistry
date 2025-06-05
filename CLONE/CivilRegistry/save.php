@@ -53,7 +53,7 @@ require 'dbconnection.php';
     <div class="success-container">
         <div class="success-content">
                 <h3>You have requested for yor document successfully!</h3>
-                <p>Thank you for using eSertipiko Marikina. Please check your email for details.</p>
+                <p>Thank you for using eSertipiko Marikina.</p>
         </div>
     </div>
 

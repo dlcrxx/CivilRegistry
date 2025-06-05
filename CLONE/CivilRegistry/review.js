@@ -1,33 +1,79 @@
-document.getElementById('review-back-btn').onclick = function (){
+document.getElementById('review-back-btn').onclick = function () {
     window.history.back();
-}
+};
 
-function generateNumericReference(length = 10) {
-  let ref = '';
-  for (let i = 0; i < length; i++) {
-    ref += Math.floor(Math.random() * 10); // Appends a random digit (0-9)
-  }
-  return ref;
-}
+document.getElementById('submit-review-btn').onclick = function () {
+    window.location.href = "save.php";
+};
 
-function sendMail(){
+document.getElementById('download-pdf-btn').onclick = function () {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    let y = 10;
 
-    let parms ={
-        name: recipientName,
-        email: emailAddress,
-        type_Of_doc: typeOfDoc,
-        reference_num: generateNumericReference()
-    };
+    function addSection(title, items) {
+        doc.setFontSize(14);
+        doc.setFont("helvetica", "bold");
+        doc.text(title, 10, y);
+        y += 6;
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(11);
+        items.forEach(item => {
+            doc.text(item, 10, y);
+            y += 6;
+        });
+        y += 4;
+    }
 
-    return emailjs.send('service_u4a8a5w','template_vs4fx9v',parms);
-}
+    addSection("Personal Information", [
+        "Type of Document: " + typeOfDoc,
+        "Sex: " + sex,
+        "First Name: " + firstName,
+        "Middle Name: " + middleName,
+        "Last Name: " + lastName,
+        ...(sex.toLowerCase() === "female" ? [
+            "Marital Status: " + maritalStatus,
+            "Married Last Name: " + marriedLastName
+        ] : []),
+        "Birthday: " + birthday,
+        "Type of ID: " + idType
+    ]);
 
-document.getElementById('submit-review-btn').onclick = function() {
-    sendMail().then(function() {
-        // Redirect only after sending the email successfully
-        window.location.href = "save.php";
-    }).catch(function(error) {
-        alert("Email sending failed: " + JSON.stringify(error));
-        console.error("EmailJS Error:", error);
-    });
+    addSection("Father's Information", 
+        noFather === 'yes' ? ["No Father's Name on Certificate: Yes"] : [
+            "Father's First Name: " + fatherFirst,
+            "Father's Middle Name: " + fatherMiddle,
+            "Father's Last Name: " + fatherLast
+        ]
+    );
+
+    addSection("Mother's Information", [
+        "Mother's Marital Status: " + motherStatus,
+        "Mother's First Name: " + motherFirst,
+        "Mother's Maiden Middle Name: " + motherMiddle,
+        "Mother's Maiden Last Name: " + motherLast
+    ]);
+
+    addSection("Birth Place", [
+        "Birth Country: " + birthCountry,
+        "Birth Province: " + birthProvince,
+        "Birth Municipal: " + birthMunicipal
+    ]);
+
+    addSection("Purpose of Request", [
+        "Purpose: " + purpose
+    ]);
+
+    addSection("Delivery Information", [
+        "Recipient Name: " + recipientName,
+        "Street Address: " + streetAddress,
+        "Subdivision/Building Name: " + subAddress,
+        "Barangay: " + barangay,
+        "Contact Number: " + contact,
+        "Email Address: " + emailAddress,
+        "Payment Method: " + payment,
+        "Control Number: " + controlNum
+    ]);
+
+    doc.save("eSertipiko_Marikina_Review.pdf");
 };

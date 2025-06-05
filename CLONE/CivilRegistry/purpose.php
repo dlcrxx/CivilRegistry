@@ -76,7 +76,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <option>Marriage</option>
                         <option>Late Registration</option>
                         <option>Loans/Benefits</option>
+                        <option>Others</option>
                     </select>
+            </div>
+             <div class="form-group" id="otherReasonGroup" style="display: none;">
+                <label class="input-label" id="name-personal">State your reason</label>
+                <input class="input-value" type="text" id="other-reason" name="other-reason" placeholder="Input here" autocomplete="off">
             </div>
               <div class="submit-btn-birth">
                 <button id="purpose-back-btn" type="button">Back</button>

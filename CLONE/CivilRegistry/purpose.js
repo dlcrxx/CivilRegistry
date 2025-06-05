@@ -12,6 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('purpose-back-btn').onclick = function (){
         window.history.back();
     };
+
+        const otherReasonGroup = document.getElementById('otherReasonGroup');
+
+        selectPurpose.addEventListener('change', function () {
+            if (selectPurpose.value === 'Others') {
+                otherReasonGroup.style.display = 'block';
+            } else {
+                otherReasonGroup.style.display = 'none';
+            }
+        });
 });
 
 

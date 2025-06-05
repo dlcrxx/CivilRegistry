@@ -1,11 +1,37 @@
+<?php
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $_SESSION['referenceNum'] = $_POST['referenceNum'] ?? '';
+    $_SESSION['payment'] = $_POST['payment'] ?? '';
+    $_SESSION['controlNum'] = $_POST['controlNum'] ?? '';
+
+    header("Location: review.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="birth-cert.css">
     <link rel="icon" href="android-chrome-192x192.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>eSertipiko Marikina: Online Registration for Civil Documents</title>
+     <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "jSlqx2FnCw9rucgTM",
+      });
+   })();
+</script>
 </head>
 <body>
     <div class="sticky-header">
@@ -40,6 +66,57 @@
         </div>
     </section>
     </div>
+
+     <div class="birth-container">
+        <div class="form-title">
+            <h3>Please provide the following information below</h3>
+        </div>
+        <form method="post">
+           <div class="form-p">
+                <p>Payment Type</p>
+           </div>
+
+        <div class="form-group-payment-container">
+             <div class="form-group-payment" data-type="online">
+                <img src="online-payment.png" alt="Online Payment">
+                <h3>Online Payment</h3>
+            </div>
+            <div class="form-group-payment" data-type="otc">
+                <img src="over-the-counter.png" alt="Over-the-Counter">
+                <h3>Over-the-counter</h3>
+            </div>
+        </div>
+
+        <div id="otcNote" class="payment-note" style="display: none;">
+            <p><strong>Note:</strong> You will need the <strong>reference number</strong> sent to your email to pay the bill over-the-counter.</p>
+        </div>
+
+        <div class="form-group">
+            <label class="input-label">Reference Number</label>
+            <input class="input-value" type="text" id="referenceNum" placeholder="Enter your reference number" autocomplete="off" name="referenceNum">
+        </div>
+
+        <div class="form-group">
+            <label class="input-label">Payment Method</label>
+            <select class="input-value" id="selectPayment" name="payment">
+                <option selected disabled>Select Payment</option>
+            </select>
+        </div>
+
+        <div class="form-group" id="controlInputGroup" style="display: none;">
+            <label class="input-label" id="inputLabel">Control Number</label>
+            <input class="input-value" type="text" id="controlInput" placeholder="Enter number" autocomplete="off" name="controlNum">
+        </div>
+
+        <div class="payment-btn-birth">
+                <button id="payment-back" type="button">Back</button>
+                <button id="payment-birth-btn" type="submit">Continue</button>
+        </div>
+        </form>
+     </div>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script> emailAdd = <?= json_encode($_SESSION['email-address']) ?>; </script>
+     <script src="payment-method.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

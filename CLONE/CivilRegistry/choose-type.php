@@ -6,16 +6,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     switch ($_SESSION['typeOfcert']) {
         case 'Birth Certificate':
-            header("Location: birth-certificate.php");
+            header("Location: choose-for.php");
             break;
         case 'Marriage Certificate':
-            header("Location: marriage-certificate.php");
+            header("Location: choose-for.php");
             break;
         case 'Death Certificate':
             header("Location: death-certificate.php");
             break;
         case 'Cenomar':
-            header("Location: ../CENOMAR/personalinfo.php");
+            header("Location: choose-for.php");
             break;
         default:
             header("Location: choose-type.php");

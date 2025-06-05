@@ -68,7 +68,7 @@ form p{
     text-align: center;
 }
 
-#submit-review-btn, #review-back-btn, #payment-back, #payment-submit-btn, #birth-place-back, #birth-place-btn, #mother-birth-btn,#mother-back-btn, #father-back-btn, #father-btn, #birth-btn, #birth-back-btn, #purpose-btn, #purpose-back-btn, #purpose-btn, #delivery-back,#delivery-birth-btn{
+#download-pdf-btn,#payment-birth-btn,#submit-review-btn, #review-back-btn, #payment-back, #payment-submit-btn, #birth-place-back, #birth-place-btn, #mother-birth-btn,#mother-back-btn, #father-back-btn, #father-btn, #birth-btn, #birth-back-btn, #purpose-btn, #purpose-back-btn, #purpose-btn, #delivery-back,#delivery-birth-btn{
     border: none;
     background-color:#4071a0;
     width: 15%;
@@ -190,3 +190,46 @@ form p{
     font-size: 20px;
 }
 
+.form-group-payment{
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #1e88ce;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0px 10px;
+    position: relative;
+    left: 25%;
+    top: 10px;
+}
+
+.form-group-payment.selected {
+    border-color: #007bff;
+    background-color: #e6f0ff;
+}
+
+.form-group-payment img{
+    height: 60px;
+}
+
+.form-group-payment h3{
+    font-size: 13px;
+}
+
+.payment-note {
+    background-color: #f7f2e4;
+    border-left: 5px solid #ffc107;
+    padding: 12px 16px;
+    margin: 25px 0;
+    font-size: 14px;
+    color: #856404;
+    border-radius: 6px;
+}
+
+.payment-note p{
+    color:#333;
+}
+
+.payment-btn-birth{
+    text-align: center;
+}
