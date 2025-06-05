@@ -63,13 +63,13 @@ if (isset($_GET['for'])) {
         <div class="someone-self-container">
             <div class="choices-container">
                 <a href="process-for.php?for=personal">
-                    <img src="personal.png">
+                    <img src="../images/personal.png">
                     <h3>Personal</h3>
                 </a>
             </div>
             <div class="choices-container">
-                <a href="process-for.php?for=someone">
-                    <img src="someone.png">
+                <a href="../someone/your-information.php">
+                    <img src="../images/someone.png">
                     <h3>For someone else</h3>
                 </a>
             </div>
