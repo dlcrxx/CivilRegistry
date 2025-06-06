@@ -22,6 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 otherReasonGroup.style.display = 'none';
             }
         });
+    
+        document.getElementById("purpose-btn").addEventListener("click", function(e) {
+    const selectedPurpose = document.getElementById("selectPurpose").value;
+    const otherReason = document.getElementById("other-reason").value;
+
+    if (selectedPurpose === "Others" && otherReason.trim() === "") {
+        e.preventDefault();
+        swal("Warning", "Please provide your reason.", "warning");
+    }
+});
 });
 
 

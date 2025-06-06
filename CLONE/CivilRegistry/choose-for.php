@@ -3,13 +3,8 @@ session_start();
 
 if (isset($_GET['for'])) {
     $_SESSION['for'] = $_GET['for'];
-    header("Location: delivery.php");
-    exit();
 }
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -68,7 +63,7 @@ if (isset($_GET['for'])) {
                 </a>
             </div>
             <div class="choices-container">
-                <a href="../someone/your-information.php">
+                <a href="process-for.php?for=someone">
                     <img src="../images/someone.png">
                     <h3>For someone else</h3>
                 </a>
@@ -79,7 +74,6 @@ if (isset($_GET['for'])) {
         </div>
     </div>
 
-    
     <footer class="footer">
         <div class="footer-container">
             <div class="contact-us">

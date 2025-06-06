@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
-  const noFatherCheckbox = document.querySelector('input[name="no_father"]');
+  const noFatherCheckbox = document.querySelector('input[name="their-no_father"]');
   const firstNameInput = document.getElementById('father-first-name');
   const middleNameInput = document.getElementById('father-middle-name');
   const lastNameInput = document.getElementById('father-last-name');

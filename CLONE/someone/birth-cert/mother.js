@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
-  const maritalStatusRadios = document.getElementsByName('mother-marital-status');
+  const maritalStatusRadios = document.getElementsByName('their-mother-marital-status');
   const firstNameInput = document.getElementById('mother-first-name');
   const middleNameInput = document.getElementById('mother-middle-name');
   const lastNameInput = document.getElementById('mother-last-name');

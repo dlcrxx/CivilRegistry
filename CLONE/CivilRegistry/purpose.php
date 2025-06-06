@@ -1,9 +1,15 @@
 <?php
 session_start();
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $_SESSION['selectPurpose'] = $_POST['selectPurpose'] ?? '';
-    
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $purpose = $_POST['selectPurpose'] ?? '';
+
+    if ($purpose === 'Others') {
+        $purpose = $_POST['other-reason'] ?? 'Others';
+    }
+
+    $_SESSION['selectPurpose'] = $purpose;
+
     header("Location: delivery-details.php");
     exit();
 }

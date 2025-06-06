@@ -1,0 +1,14 @@
+#spouse-back-btn, #spouse-btn, #personal-info-back,#personal-info-submit, #marriage-back-btn, #marriage-submit-btn, #marriagePlace-back-btn, #marriagePlace-submit-btn{
+    border: none;
+    background-color:#4071a0;
+    width: 15%;
+    height: 15%;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.submit-btn-marriage, .submit-btn-marriageDate, .submit-btn-marriagePlace{
+    text-align: center;
+}

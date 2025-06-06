@@ -15,6 +15,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     exit();
 }
 
+$recipientName = trim(
+    ($_SESSION['first-name'] ?? '') . ' ' .
+    ($_SESSION['middle-name'] ?? '') . ' ' .
+    ($_SESSION['last-name'] ?? '')
+);
+
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +90,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             <div class="form-group">
                 <label class="input-label" id="name-recipient">Recipient</label>
-                <input class="input-value" type="text" id="recipient-name" placeholder="Full Name" name="recipient-name" autocomplete="off">
+                <input class="input-value" type="text" id="recipient-name" placeholder="Full Name" value="<?php echo htmlspecialchars($recipientName); ?>" name="recipient-name" autocomplete="off" readonly>
             </div>
             <div class="form-group">
                 <label class="input-label" id="house-number-street-label">House Number and Street</label>

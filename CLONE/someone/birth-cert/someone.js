@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const sexRadios = document.getElementsByName("sex");
-    const maritalRadios = document.getElementsByName("marital-status");
+    const sexRadios = document.getElementsByName("their-sex");
+    const maritalRadios = document.getElementsByName("their-marital-status");
 
     const civilStatusDiv = document.getElementById("civil-status-personal");
     const marriedLastNameDiv = document.getElementById("form-married-last-name");
@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
         radio.addEventListener("change", function () {
             if (this.value === "female") {
                 civilStatusDiv.style.display = "block";
-                labelMiddleName.textContent = 'Your Maiden Middle Name';
-                labelLastName.textContent = 'Your Maiden Last Name';
+                labelMiddleName.textContent = 'Their Maiden Middle Name';
+                labelLastName.textContent = 'Their Maiden Last Name';
             } else{
                 civilStatusDiv.style.display = "none";
                 marriedLastNameDiv.style.display = "none"; // hide this too if not female
-                labelMiddleName.textContent = 'Your Middle Name';
-                labelLastName.textContent = 'Your Last Name';
+                labelMiddleName.textContent = 'Their Middle Name';
+                labelLastName.textContent = 'Their Last Name';
             }
         });
     });
@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const middleName = document.getElementById('middle-name').value.trim();
         const lastName = document.getElementById('last-name').value.trim();
         const birthday = document.querySelector('input[type="date"]').value;
-        const typeOfId = document.getElementById('selectIDType').value;
 
         if (!name || !middleName || !lastName || birthday === "" || !typeOfId || typeOfId.startsWith("--")) {
             event.preventDefault();
@@ -52,13 +51,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!selectedSex) {
             event.preventDefault();
-            swal("Warning", "Please select your sex.", "warning");
+            swal("Warning", "Please select their sex.", "warning");
             return;
         }
 
         if (selectedSex === "female" && !selectedMarital) {
             event.preventDefault();
-            swal("Warning", "Please select your civil status.", "warning");
+            swal("Warning", "Please select their civil status.", "warning");
             return;
         }
 
@@ -66,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const marriedLastName = document.getElementById('married-last-name').value.trim();
             if (!marriedLastName) {
                 event.preventDefault();
-                swal("Warning", "Please enter your married last name.", "warning");
+                swal("Warning", "Please enter their married last name.", "warning");
                 return;
             }
         }
@@ -74,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("birth-back-btn").addEventListener("click", function(event) {
         event.preventDefault(); 
-        window.location.href = "../CivilRegistry/choose-for.php";
+        window.history.back();
     });
 });
 
