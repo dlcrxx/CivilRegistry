@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: choose-for.php");
             break;
         case 'Death Certificate':
-            header("Location: death-certificate.php");
+            header("Location: ../DEATH/for-who.php");
             break;
         case 'Cenomar':
             header("Location: choose-for.php");
@@ -45,21 +45,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <nav>
                 <ul>
                     <li><a href="check-status.php">Check Status</a></li>
-                    <li><a href="payment-method.php">Payment Method</a></li>
+                    <li><a href="payments.html">Payment Method</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">Civil Registry Documents</a>
                          <div class="dropdown-box">
-                            <a href="#">Birth Certificate</a>
-                            <a href="#">Marriage Certificate</a>
-                            <a href="#">CENOMAR</a>
-                            <a href="#">Death Certificate</a>
+                            <a href="birth-cert.html">Birth Certificate</a>
+                            <a href="marriage-cert.html">Marriage Certificate</a>
+                            <a href="cenomar.html">CENOMAR</a>
+                            <a href="death-cert.html">Death Certificate</a>
                          </div>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">Resources</a>
                         <div class="dropdown-box">
-                            <a href="#">News & Announcement</a>
-                            <a href="#">Delivery Reminder</a>
+                            <a href="update.html">News & Announcement</a>
+                            <a href="delivery.html">Delivery Reminder</a>
                             <a href="#">Contacts</a>
                     </li>
                 </ul>

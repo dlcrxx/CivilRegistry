@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $purpose = $_POST['selectPurpose'] ?? '';
+
+    if ($purpose === 'Others') {
+        $purpose = $_POST['other-reason'] ?? 'Others';
+    }
+
+    $_SESSION['selectPurpose'] = $purpose;
+
+    header("Location: delivery-details.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,14 +67,14 @@
       <div class="form-title">
          <h3>Please provide the following information below</h3>
       </div>
-      <form action="delivery-details.php" method="post">
+      <form method="post">
          <div class="form-p">
             <p>Purpose of Request</p>
          </div>
          <div class="form-group-purpose">
             <label class="input-label">Your purpose for this request</label>
-            <select class="input-value-purpose" id="selectPurpose" name="selectPurpose">
-               <option disabled selected>-Select Option-</option>
+            <select  class="input-value-purpose" id="selectPurpose" name="selectPurpose">
+               <option value="" disabled selected>-Select Option-</option>
                <option>Marriage Requirement</option>
                <option>Marriage Abroad</option>
                <option>Fiancé/Fiancée Visa Application</option>
@@ -67,17 +85,24 @@
                <option>Employment Requirement</option>
                <option>Adoption or Child Custody</option>
                <option>Personal Records/Verification</option>
+               <option>Others</option>
             </select>
          </div>
 
+         <div class="form-group" id="otherReasonGroup" style="display: none;">
+                <label class="input-label" id="name-personal">State your reason</label>
+                <input class="input-value" type="text" id="other-reason" name="other-reason" placeholder="Input here" autocomplete="off">
+         </div>
+
          <div class="submit-btn-birth">
-            <button id="birth-back-btn" type="button" onclick="window.location.href='birth-place.php'">Back</button>
+            <button id="purpose-back-btn" type="button">Back</button>
             <button id="purpose-btn" type="submit">Continue</button>
          </div>
       </form>
    </div>
 
-   <script src="purpose.js"></script>
+   <script src="purpose-req.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
    <script src="../CivilRegistry/index.js"></script>
 </body>
 </html>

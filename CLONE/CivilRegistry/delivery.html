@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>eSertipiko Marikina - Updates and News</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet" />
+
+    <style>
+      .header {
+        height: 76px;
+        background: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+
+      .header-content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 6rem;
+      }
+      /* Hero section */
+      .hero {
+        height: 549px;
+        background-image: url("https://philippine-real-estate.com/wp-content/uploads/2023/02/Marikina-City.png");
+        background-size: cover;
+        background-position: center;
+        margin-top: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding: 0 1rem;
+      }
+
+      .hero-content {
+        max-width: 1282px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 75px;
+        margin-bottom: 1.25rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero p {
+        font-size: 23px;
+        line-height: 34.5px;
+        max-width: 1218px;
+        margin: 0 auto;
+      }
+
+      /* Announcements */
+      .announcements {
+        background-color: #d7edfa;
+        padding: 3rem 0;
+        text-align: center;
+      }
+
+      .announcements-header {
+        background-color: #4071a0;
+        padding: 1rem;
+        display: inline-block;
+        margin: 0 auto;
+      }
+
+      .announcements-header h2 {
+        color: white;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 60px;
+      }
+
+      .announcements-content {
+        padding: 4rem 0;
+      }
+
+      .announcement-card {
+        max-width: 1200px;
+        margin: 0 auto 3rem;
+      }
+
+      .announcement-card h2 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 60px;
+        margin-bottom: 1rem;
+      }
+
+      .announcement-card p {
+        font-size: 20px;
+        line-height: 30px;
+      }
+
+      /* Reminder section */
+      .reminder-section {
+        padding: 4rem 2rem;
+        background-color: #f0f4f8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .main-bubble {
+        background: #4071a0;
+        color: white;
+        border-radius: 30px;
+        width: 100%;
+        max-width: 453px;
+        height: 134px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.6rem;
+        font-weight: bold;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        margin-bottom: 2rem;
+      }
+
+      .sub-bubbles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        max-width: 900px;
+        width: 100%;
+      }
+
+      .sub-bubble {
+        background: #e0f2fe;
+        border: 2px solid #90cdf4;
+        border-radius: 25px;
+        padding: 1rem 1.5rem;
+        width: 260px;
+        text-align: center;
+        font-size: 1rem;
+        color: #1e3a8a;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+      <div class="sticky-header">
+    <section class="header">
+        <div class="logo">
+            <h1><a href="../CivilRegistry/index.php">eSertipiko Marikina</a></h1>
+        </div>
+        <div class="navigator">
+            <nav>
+                <ul>
+                    <li><a href="../CivilRegistry/check-status.php" class="select">Check Status</a></li>
+                    <li><a href="../CivilRegistry/payments.html" class="select">Payment Method</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" class="select">Civil Registry Documents</a>
+                        <div class="dropdown-box">
+                            <a href="../CivilRegistry/birth-cert.html">Birth Certificate</a>
+                            <a href="../CivilRegistry/marriage-cert.html">Marriage Certificate</a>
+                            <a href="../CivilRegistry/marriage-cert.html">CENOMAR</a>
+                            <a href="../CivilRegistry/death-cert.html">Death Certificate</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" class="select">Resources</a>
+                         <div class="dropdown-box">
+                            <a href="#">News & Announcement</a>
+                            <a href="#">Delivery Reminder</a>
+                            <a href="#">Contacts</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+                <div>
+                    <i class="bi bi-person-fill"></i>
+                </div>
+        </div>
+    </section>
+    </div>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Delivery Reminder</h1>
+          <p>The Philippine Statistics Authority – Marikina City is committed to ensuring that your requested documents are delivered safely and on time. This section provides timely reminders and important information about the delivery of civil registry documents, PhilSys IDs, and other official materials.</p>
+        </div>
+      </section>
+
+      <!-- Announcements -->
+      <section class="announcements">
+        <div class="container">
+          <div class="announcements-header">
+            <h2>Track Your Documents and Stay Informed</h2>
+          </div>
+        </div>
+      </section>
+
+      <div class="announcements-content">
+        <div class="container">
+          <article class="announcement-card">
+            <h2>May 26, 2025 – PhilSys ID Delivery</h2>
+            <p>If you completed your PhilSys Step 2 Registration on or before April 30, 2025, please expect your PhilSys ID to arrive via PHLPost within the next two weeks. Make sure someone is available to receive the package at your registered address.</p>
+          </article>
+
+          <article class="announcement-card">
+            <h2>May 24, 2025 – Birth and Marriage Certificates (Online Requests)</h2>
+            <p>All online requests made between May 15–20, 2025 through PSA Serbilis or PSAHelpline.ph are now in transit. Standard delivery time is 3–5 working days within Metro Manila. For tracking, refer to the confirmation email sent to you upon payment.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Reminder Section -->
+      <section class="reminder-section">
+        <div class="main-bubble">Reminder</div>
+        <div class="sub-bubbles">
+          <div class="sub-bubble">
+            Please present a vallid ID when receiving your document.
+          </div>
+          <div class="sub-bubble">
+            For failed delivery attempts, contact the courier immediately or coordinate with PSA Marikina for re-delivery.
+          </div>
+          <div class="sub-bubble">
+           Make sure your name, address, and contact details were correctly input during your request.
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+       <footer class="footer">
+        <div class="footer-container">
+            <div class="contact-us">
+                <p class="footer-title">Contact us</p>
+                <i class="bi bi-envelope"></i>
+                <a>esertipiko.marikina@gmail.com</a><br>
+                <i class="bi bi-telephone"></i>
+                <span>(325) 748-1936</span><br>
+                <i class="bi bi-geo-alt"></i>
+                <span>Blk 7 Lot 10 Tuazon St. Barangay Sta. Elena, Marikina City</span>
+            </div>
+
+            <div class="user-agreement">
+                <p class="footer-title">User Agreement</p>
+                <p>Terms and Policy</p>
+            </div>
+
+            <div class="partnership">
+                <p class="footer-title">Authorized Partner by</p>
+                <p id="psa">Phillipine Statistics Authority</p>
+            </div>
+        </div>
+        <div class="icon">
+            <i class="bi bi-facebook icon-logo"></i>
+            <i class="bi bi-twitter-x icon-logo"></i>
+        </div>
+        <div class="copyright">
+            <p>Copyright <i class="bi bi-c-circle"></i> eSertipiko Marikina 2025. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

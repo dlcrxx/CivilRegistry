@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $_SESSION['mother-first-name'] = $_POST['mother-first-name'] ?? '';
+    $_SESSION['mother-middle-name'] = $_POST['mother-middle-name'] ?? '';
+    $_SESSION['mother-last-name'] = $_POST['mother-last-name'] ?? '';
+
+    header("Location: birth-place.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="birth-cert.css">
-    <link rel="icon" href="../CivilRegistry/android-chrome-192x192.png">
+    <link rel="icon" href="../images/android-chrome-192x192.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>eSertipiko Marikina: Online Registration for Civil Documents</title>
 </head>
@@ -33,8 +46,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Resources</a>
                          <div class="dropdown-box">
-                            <a href="#">News & Announcement</a>
-                            <a href="#">Delivery Reminder</a>
+                            <a href="../CivilRegistry/update.html">News & Announcement</a>
+                            <a href="../CivilRegistry/delivery.html">Delivery Reminder</a>
                             <a href="#">Contacts</a>
                         </div>
                     </li>
@@ -48,33 +61,31 @@
         <div class="form-title">
             <h3>Please provide the following information below</h3>
         </div>
-        <form action="birth-place.php" method="post">
+        <form  method="post">
             <div class="form-p">
                 <p>Mother Information</p>
             </div>
-            
+        
             <div class="form-group">
-            <label class="input-label">Mother's Maiden Name</label><br>
-            <label class="input-label">Your Mother's Name</label><br>
-            <input class="input-value" type="text" id="mother-first-name" placeholder="First name"><br>
-            <label class="input-label">Your Mother's Middle Name</label>
-            <input class="input-value" type="text" id="mother-middle-name" placeholder="Middle name">
-            <label class="input-label">Your Mother's Last Name</label>
-            <input class="input-value" type="text" id="mother-last-name" placeholder="Last name">
-         </div>
-         <div class="form-group">
-
-         </div>
-         <div class="form-group">
-
-         </div>
-              <div class="submit-btn-birth">
-                <button id="birth-back-btn" type="button" onclick="window.location.href='father.php'">Back</button>
-                <button id="birth-btn">Continue</button>
+                <label class="input-label">Your Mother's Maiden Name</label><br>
+                <input class="input-value" type="text" id="mother-first-name" placeholder="First name" name="mother-first-name"><br>
+            </div>
+            <div class="form-group">
+                <label class="input-label">Your Mother's Middle Name</label>
+                <input class="input-value" type="text" id="mother-middle-name" placeholder="Middle name" name="mother-middle-name">
+            </div>
+            <div class="form-group">
+                <label class="input-label">Your Mother's Last Name</label>
+                <input class="input-value" type="text" id="mother-last-name" placeholder="Last name" name="mother-last-name">
+            </div>
+            <div class="submit-btn-birth">
+                <button id="birth-back-btn" type="button">Back</button>
+                <button id="birth-btn" type="submit">Continue</button>
             </div>
         </form>
     </div>
     <script src="mother.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../CivilRegistry/index.js"></script>
 </body>
 </html>

@@ -133,17 +133,17 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle">Civil Registry Documents</a>
                                 <div class="dropdown-box">
-                                    <a href="../CivilRegistry/birth-cert.html">Birth Certificate</a>
-                                    <a href="../CivilRegistry/marriage-cert.html">Marriage Certificate</a>
-                                    <a href="../CivilRegistry/cenomar.html">CENOMAR</a>
-                                    <a href="../CivilRegistry/death-cert.html">Death Certificate</a>
+                                    <a href="birth-cert.html">Birth Certificate</a>
+                                    <a href="marriage-cert.html">Marriage Certificate</a>
+                                    <a href="cenomar.html">CENOMAR</a>
+                                    <a href="death-cert.html">Death Certificate</a>
                                 </div>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle">Resources</a>
                                 <div class="dropdown-box">
-                                    <a href="#">News & Announcement</a>
-                                    <a href="#">Delivery Reminder</a>
+                                    <a href="update.html">News & Announcement</a>
+                                    <a href="delivery.html">Delivery Reminder</a>
                                     <a href="#">Contacts</a>
                             </li>
                         </ul>

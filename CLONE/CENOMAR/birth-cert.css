@@ -64,7 +64,7 @@ form p{
     text-align: center;
 }
 
-#birth-btn, #birth-back-btn, #purpose-btn{
+#delivery-birth-btn,#delivery-back,#purpose-back-btn,#birth-place-back,#father-back-btn,#birth-btn, #birth-back-btn, #purpose-btn{
     border: none;
     background-color:#4071a0;
     width: 15%;

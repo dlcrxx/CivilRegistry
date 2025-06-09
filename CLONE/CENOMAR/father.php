@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $_SESSION['no_father'] = isset($_POST['no_father']) ? 'yes' : 'no';
+    $_SESSION['father-first-name'] = $_POST['father-first-name'] ?? '';
+    $_SESSION['father-middle-name'] = $_POST['father-middle-name'] ?? '';
+    $_SESSION['father-last-name'] = $_POST['father-last-name'] ?? '';
+
+    header("Location: mother.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="birth-cert.css">
-    <link rel="icon" href="../CivilRegistry/android-chrome-192x192.png">
+    <link rel="icon" href="../images/android-chrome-192x192.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>eSertipiko Marikina: Online Registration for Civil Documents</title>
 </head>
@@ -33,8 +47,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Resources</a>
                          <div class="dropdown-box">
-                            <a href="#">News & Announcement</a>
-                            <a href="#">Delivery Reminder</a>
+                            <a href="../CivilRegistry/update.html">News & Announcement</a>
+                            <a href="../CivilRegistry/delivery.html">Delivery Reminder</a>
                             <a href="#">Contacts</a>
                         </div>
                     </li>
@@ -48,32 +62,34 @@
         <div class="form-title">
             <h3>Please provide the following information below</h3>
         </div>
-        <form action="mother.php" method="post">
+        <form method="post">
             <div class="form-p">
                 <p>Father Information</p>
             </div>
             <div class="form-group-check">
-                <input class="input-value-check" type="checkbox">
+                <input class="input-value-check" type="checkbox" name="no_father">
                 <label class="input-label">There is no father's name in Birth Certificate</label>
             </div>
             <div class="form-group">
                 <label class="input-label">Your Father's Name</label>
-                <input class="input-value" type="text" id="first-name" placeholder="First name">
+                <input class="input-value" type="text" id="father-first-name" placeholder="First name" name="father-first-name">
             </div>
              <div class="form-group">
                 <label class="input-label">Your Father's Middle Name</label>
-                <input class="input-value" type="text" id="first-name" placeholder="Middle name">
+                <input class="input-value" type="text" id="father-middle-name" placeholder="Middle name" name="father-middle-name">
             </div>
              <div class="form-group">
                 <label class="input-label">Your Father's Last Name</label>
-                <input class="input-value" type="text" id="first-name" placeholder="Last name">
+                <input class="input-value" type="text" id="father-last-name" placeholder="Last name" name="father-last-name">
             </div>
               <div class="submit-btn-birth">
-                <button id="birth-back-btn" type="button" onclick="window.location.href='personalinfo.php'">Back</button>
-                <button id="birth-btn">Continue</button>
+                <button id="father-back-btn" type="button">Back</button>
+                <button id="birth-btn" type="submit">Continue</button>
             </div>
         </form>
     </div>
     <script src="../CivilRegistry/index.js"></script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     <script src="father.js"></script>
 </body>
 </html>

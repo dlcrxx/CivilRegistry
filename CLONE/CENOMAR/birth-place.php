@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $_SESSION['birth_country'] = $_POST['birth_country'] ?? '';
+    $_SESSION['birth_province'] = $_POST['birth_province'] ?? '';
+    $_SESSION['birth_municipal'] = $_POST['birth_municipal'] ?? '';
+
+    header("Location: purpose-req.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,8 +47,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Resources</a>
                          <div class="dropdown-box">
-                            <a href="#">News & Announcement</a>
-                            <a href="#">Delivery Reminder</a>
+                            <a href="../CivilRegistry/update.html">News & Announcement</a>
+                            <a href="../CivilRegistry/delivery.html">Delivery Reminder</a>
                             <a href="#">Contacts</a>
                         </div>
                     </li>
@@ -48,27 +62,29 @@
         <div class="form-title">
             <h3>Please provide the following information below</h3>
         </div>
-         <form action="purpose-req.php" method="post">
+         <form method="post">
             <div class="form-p">
                 <p>Birth Place</p>
             </div>
            <div class="form-group">
                 <label class="input-label">Your Birth Country</label>
-                <input class="input-value" type="text" id="birth-country" placeholder="Birth Country">
+                <input class="input-value" type="text" id="birth-country" placeholder="Birth Country" name="birth_country">
             </div>
             <div class="form-group">
                 <label class="input-label">Your Birth Province</label>
-                <input class="input-value" type="text" id="birth-province" placeholder="Birth Province">
+                <input class="input-value" type="text" id="birth-province" placeholder="Birth Province" name="birth_province">
             </div>
              <div class="form-group">
                 <label class="input-label">Your Birth Municipality</label>
-                <input class="input-value" type="text" id="birth-municipality" placeholder="Birth Municipality">
+                <input class="input-value" type="text" id="birth-municipality" placeholder="Birth Municipality" name="birth_municipal">
              </div>
               <div class="submit-btn-birth">
-                <button id="birth-back-btn" type="button" onclick="window.location.href='mother.php'">Back</button>
-                <button id="birth-btn">Continue</button>
+                <button id="birth-place-back" type="button">Back</button>
+                <button id="birth-btn" type="submit">Continue</button>
             </div>
     </div>
     <script src="../CivilRegistry/index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="birth-place.js"></script>
 </body>
 </html>

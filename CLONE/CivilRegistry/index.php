@@ -32,8 +32,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Resources</a>
                          <div class="dropdown-box">
-                            <a href="#">News & Announcement</a>
-                            <a href="#">Delivery Reminder</a>
+                            <a href="update.html">News & Announcement</a>
+                            <a href="delivery.html">Delivery Reminder</a>
                             <a href="#">Contacts</a>
                         </div>
                     </li>

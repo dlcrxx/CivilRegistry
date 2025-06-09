@@ -35,21 +35,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <nav>
                 <ul>
                     <li><a href="check-status.php" class="select">Check Status</a></li>
-                    <li><a href="payment-method.php" class="select">Payment Method</a></li>
+                    <li><a href="payments.html" class="select">Payment Method</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Civil Registry Documents</a>
                         <div class="dropdown-box">
-                            <a href="#">Birth Certificate</a>
-                            <a href="#">Marriage Certificate</a>
-                            <a href="#">CENOMAR</a>
-                            <a href="#">Death Certificate</a>
+                            <a href="birth-cert.html">Birth Certificate</a>
+                            <a href="marriage-cert.html">Marriage Certificate</a>
+                            <a href="cenomar.html">CENOMAR</a>
+                            <a href="death-cert.html">Death Certificate</a>
                         </div>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Resources</a>
                          <div class="dropdown-box">
-                            <a href="#">News & Announcement</a>
-                            <a href="#">Delivery Reminder</a>
+                            <a href="update.html">News & Announcement</a>
+                            <a href="delivery.html">Delivery Reminder</a>
                             <a href="#">Contacts</a>
                         </div>
                     </li>
@@ -92,5 +92,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     </div>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src='father.js'></script>
+    <script src="index.js"></script>
 </body>
 </html>

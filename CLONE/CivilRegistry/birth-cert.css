@@ -68,7 +68,7 @@ form p{
     text-align: center;
 }
 
-#download-pdf-btn,#payment-birth-btn,#submit-review-btn, #review-back-btn, #payment-back, #payment-submit-btn, #birth-place-back, #birth-place-btn, #mother-birth-btn,#mother-back-btn, #father-back-btn, #father-btn, #birth-btn, #birth-back-btn, #purpose-btn, #purpose-back-btn, #purpose-btn, #delivery-back,#delivery-birth-btn{
+#date-back-btn,#date-btn,#primary-back-btn, #primary-btn, #download-pdf-btn,#payment-birth-btn,#submit-review-btn, #review-back-btn, #payment-back, #payment-submit-btn, #birth-place-back, #birth-place-btn, #mother-birth-btn,#mother-back-btn, #father-back-btn, #father-btn, #birth-btn, #birth-back-btn, #purpose-btn, #purpose-back-btn, #purpose-btn, #delivery-back,#delivery-birth-btn{
     border: none;
     background-color:#4071a0;
     width: 15%;

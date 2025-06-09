@@ -7,9 +7,9 @@ session_start();
 <head>
    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="birth-cert.css">
-    <link rel="icon" href="android-chrome-192x192.png">
+    <link rel="stylesheet" href="../CivilRegistry/style.css">
+    <link rel="stylesheet" href="../CivilRegistry/birth-cert.css">
+    <link rel="icon" href="../images/android-chrome-192x192.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>eSertipiko Marikina: Online Registration for Civil Documents</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -19,27 +19,27 @@ session_start();
     <div class="sticky-header">
     <section class="header">
         <div class="logo">
-            <h1><a href="index.php">eSertipiko Marikina</a></h1>
+            <h1><a href="../CivilRegistry/index.php">eSertipiko Marikina</a></h1>
         </div>
         <div class="navigator">
             <nav>
                 <ul>
-                    <li><a href="check-status.php" class="select">Check Status</a></li>
-                    <li><a href="payments.html" class="select">Payment Method</a></li>
+                    <li><a href="../CivilRegistry/check-status.php" class="select">Check Status</a></li>
+                    <li><a href="../CivilRegistry/payments.html" class="select">Payment Method</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Civil Registry Documents</a>
                         <div class="dropdown-box">
-                            <a href="birth-cert.html">Birth Certificate</a>
-                            <a href="marriage-cert.html">Marriage Certificate</a>
-                            <a href="cenomar.html">CENOMAR</a>
-                            <a href="death-cert.html">Death Certificate</a>
+                            <a href="../CivilRegistry/birth-cert.html">Birth Certificate</a>
+                            <a href="../CivilRegistry/marriage-cert.html">Marriage Certificate</a>
+                            <a href="../CivilRegistry/cenomar.html">CENOMAR</a>
+                            <a href="../CivilRegistry/death-cert.html">Death Certificate</a>
                         </div>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Resources</a>
                          <div class="dropdown-box">
-                            <a href="update.html">News & Announcement</a>
-                            <a href="delivery.html">Delivery Reminder</a>
+                            <a href="../CivilRegistry/update.html">News & Announcement</a>
+                            <a href="../CivilRegistry/delivery.html">Delivery Reminder</a>
                             <a href="#">Contacts</a>
                         </div>
                     </li>
@@ -56,7 +56,7 @@ session_start();
         <div class="review-content">
             <div class="personal-info">
                 <h3>Personal Information</h3>
-                <p><strong>Type of Document:</strong> <?= htmlspecialchars( $_SESSION['typeOfcert']) ?></p>
+                <p><strong>For whom:</strong> <?= htmlspecialchars( $_SESSION['For-whom']) ?></p>
                 <p><strong>Sex:</strong> <?= htmlspecialchars($_SESSION['sex']) ?></p>
                 <p><strong>First Name:</strong> <?= htmlspecialchars($_SESSION['first-name']) ?></p>
                 <p><strong>Middle Name:</strong> <?= htmlspecialchars($_SESSION['middle-name']) ?></p>
@@ -68,6 +68,12 @@ session_start();
                 <p><strong>Birthday:</strong> <?= htmlspecialchars($_SESSION['birthday']) ?></p>
                 <p><strong>Type of ID:</strong> <?= htmlspecialchars($_SESSION['type_Of_Id']) ?></p>
             </div>
+            <div class="deceased-info">
+                <h3>Deceased's Information</h3>
+                <p><strong>First Name:</strong> <?= htmlspecialchars($_SESSION['relative_first_name']) ?></p>
+                <p><strong>Middle Name:</strong> <?= htmlspecialchars($_SESSION['relative_middle_name']) ?></p>
+                <p><strong>Last Name:</strong> <?= htmlspecialchars($_SESSION['relative_last_name']) ?></p>
+            </div> 
             <div class="father-info">
                 <h3>Father's Information</h3>
             <?php if (isset($_SESSION['no_father']) && $_SESSION['no_father'] === 'yes'): ?>
@@ -124,6 +130,10 @@ session_start();
     const marriedLastName = <?= json_encode($_SESSION['married-last-name'] ?? '') ?>;
     const birthday = <?= json_encode($_SESSION['birthday']) ?>;
     const idType = <?= json_encode($_SESSION['type_Of_Id']) ?>;
+
+    const relativeFirst = <?= json_encode($_SESSION['relative_first_name'] ?? '') ?>;
+    const relativeMiddle = <?= json_encode($_SESSION['relative_middle_name'] ?? '') ?>;
+    const relativeLast = <?= json_encode($_SESSION['relative_last_name'] ?? '') ?>;
     
     const noFather = <?= json_encode($_SESSION['no_father'] ?? 'no') ?>;
     const fatherFirst = <?= json_encode($_SESSION['father-first-name'] ?? '') ?>;
@@ -150,6 +160,6 @@ session_start();
     const controlNum = <?= json_encode($_SESSION['controlNum']) ?>;
     </script>
     <script src="review.js"></script>
-    <script src="index.js"></script>
+    <script src="../CivilRegistry/index.js"></script>
 </body>
 </html>
