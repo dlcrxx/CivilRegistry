@@ -156,10 +156,12 @@
         <section class="main">
             <h2>Check the Status of Your Order</h2>
             <p>We value your time and aim to provide clear updates on the delivery status of your order.</p>
-            <div class="tracker-box">
-                <input type="text" placeholder="Enter reference number">
-                <button>Check Status</button>
-            </div>
+           <div class="tracker-box">
+                    <input type="text" id="refInput" placeholder="Enter reference number">
+                    <button id="checkBtn">Check Status</button>
+                </div>
+                <div id="statusResult" style="margin-top: 20px; font-weight: bold;"></div>
+
         </section>
 
         <!-- STATUS TRACKER CARDS -->

@@ -51,8 +51,31 @@ document.getElementById("death-certificate").onclick = function(){
 document.getElementById("cenomar").onclick = function(){
     window.location.href = "choose-for.php";
 }
+
+ document.getElementById('login-icon').addEventListener('click', () => {
+        document.getElementById('login-popup').style.display = 'flex';
+        showForm('login-form');
+    });
+
+document.getElementById('close-login').addEventListener('click', () => {
+    document.getElementById('login-popup').style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+    const popup = document.getElementById('login-popup');
+    if (event.target === popup) {
+        popup.style.display = 'none';
+    }
+});
 });
 
 document.getElementById("btn-return").onclick = function (){
     window.history.back();
+}
+
+function showForm(formId) {
+    document.querySelectorAll('.popup-content').forEach(form => {
+        form.classList.remove('active');
+    });
+    document.getElementById(formId).classList.add('active');
 }

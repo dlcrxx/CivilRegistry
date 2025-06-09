@@ -40,12 +40,31 @@
                 </ul>
             </nav>
                 <div>
-                    <i class="bi bi-person-fill"></i>
+                    <i class="bi bi-person-fill" id="login-icon" style="cursor: pointer;"></i>
                 </div>
         </div>
     </section>
     </div>
 
+    <!--log in pop up-->
+    <div id="login-popup" class="popup-overlay">
+        <div class="popup-content active" id="login-form">
+            <span class="close-btn" id="close-login">&times;</span>
+            <form class="login-form" action="../Dashboard/admin/login_register.php" method="post">
+            <h2>Login</h2>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username or email" required autocomplete="off" name="username">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" required autocomplete="off" name="password">
+
+            <button type="submit" name="login">Login</button>
+            <p class="register-link">Don't have an account? <a href="#" onclick="showForm('register-form')">Register</a></p>
+            </form>
+        </div>
+    </div>
+
+    
     <!----Content----->
     <section class="first_view">
         <div class="fv-text">

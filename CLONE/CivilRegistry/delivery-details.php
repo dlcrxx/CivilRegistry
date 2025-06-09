@@ -134,7 +134,7 @@ $recipientName = trim(
                 <label class="input-label">Email Address</label>
                 <input class="input-value" type="text" id="email-address" placeholder="Email Address" name="email-address" autocomplete="off">
             </div>
-           
+
             <div class="submit-btn-birth">
                 <button id="delivery-back" type="button">Back</button>
                 <button id="delivery-birth-btn" type="submit">Continue</button>

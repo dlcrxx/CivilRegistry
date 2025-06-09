@@ -36,7 +36,7 @@ if (isset($_GET['for'])) {
             header("Location: death.php");
             break;
         case 'Cenomar':
-            header("Location: cenomar.php");
+            header("Location: ../somone/cenomar/your-information.php");
             break;
         default:
             header("Location: choose-type.php");
