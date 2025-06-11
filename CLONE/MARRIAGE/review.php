@@ -71,21 +71,21 @@ session_start();
                 </div>
                 <div class="father-info">
                     <h3>Husband's Information</h3>
-                    <p><strong>Husband's First Name:</strong> <?= htmlspecialchars($_SESSION['husband-first-name']) ?></p>
-                    <p><strong>Husband's Middle Name:</strong> <?= htmlspecialchars($_SESSION['husband-middle-name']) ?></p>
-                    <p><strong>Husband's Last Name:</strong> <?= htmlspecialchars($_SESSION['husband-last-name']) ?></p>
+                    <p><strong>Husband's First Name:</strong> <?= htmlspecialchars($_SESSION['first-name']) ?></p>
+                    <p><strong>Husband's Middle Name:</strong> <?= htmlspecialchars($_SESSION['middle-name']) ?></p>
+                    <p><strong>Husband's Last Name:</strong> <?= htmlspecialchars($_SESSION['last-name']) ?></p>
                 </div>
                 <div class="mother-info">
                     <h3>Spouse's Information</h3>
-                    <p><strong>Spouse's First Name:</strong> <?= htmlspecialchars($_SESSION['mother-first-name']) ?></p>
-                    <p><strong>Spouse's Maiden Middle Name:</strong> <?= htmlspecialchars($_SESSION['mother-middle-name']) ?></p>
-                    <p><strong>Spouse's Maiden Last Name:</strong> <?= htmlspecialchars($_SESSION['mother-last-name']) ?></p>
+                    <p><strong>Spouse's First Name:</strong> <?= htmlspecialchars($_SESSION['spouse-first-name']) ?></p>
+                    <p><strong>Spouse's Maiden Middle Name:</strong> <?= htmlspecialchars($_SESSION['spouse-middle-name']) ?></p>
+                    <p><strong>Spouse's Maiden Last Name:</strong> <?= htmlspecialchars($_SESSION['spouse-last-name']) ?></p>
                 </div>
                 <div class="birth-place-info">
                     <h3>Place of Marriage</h3>
-                    <p><strong>Country:</strong> <?= htmlspecialchars($_SESSION['birth_country']) ?></p>
-                    <p><strong>Province:</strong> <?= htmlspecialchars($_SESSION['birth_province']) ?></p>
-                    <p><strong>Municipal:</strong> <?= htmlspecialchars($_SESSION['birth_municipal']) ?></p>
+                    <p><strong>Country:</strong> <?= htmlspecialchars($_SESSION['marriageCountry']) ?></p>
+                    <p><strong>Province:</strong> <?= htmlspecialchars($_SESSION['marriageProvince']) ?></p>
+                    <p><strong>Municipal:</strong> <?= htmlspecialchars($_SESSION['marriageMunicipal']) ?></p>
                 </div>
                 <div class="purpose">
                     <h3>Purpose of Request</h3>
