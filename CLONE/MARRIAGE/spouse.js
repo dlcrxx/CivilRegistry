@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const infoLabel = document.getElementById('spouse-information');
 
   if (userSex === 'male') {
-    firstNameLabel.textContent = "Your Wife's Name";
-    middleNameLabel.textContent = "Your Wife's Middle Name";
-    lastNameLabel.textContent = "Your Wife's Last Name";
-    infoLabel.textContent = "Wife Information"
+    firstNameLabel.textContent = "Your Spouse's Name";
+    middleNameLabel.textContent = "Your Spouse's Middle Name";
+    lastNameLabel.textContent = "Your Spouse's Last Name";
+    infoLabel.textContent = "Spouse's Information"
   } else if (userSex === 'female') {
     firstNameLabel.textContent = "Your Husband's Name";
     middleNameLabel.textContent = "Your Husband's Middle Name";
@@ -32,6 +32,3 @@ document.addEventListener('DOMContentLoaded', () => {
     window.history.back();
   }
 });
-
-
-
