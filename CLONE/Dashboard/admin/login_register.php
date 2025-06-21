@@ -39,24 +39,50 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
 
     $result = $conn->query("SELECT * FROM employees WHERE username = '$email'");
-    if($result ->num_rows > 0){
-        $user = $result->fetch_assoc();
-        if(password_verify($password,$user['password'])){
-            $_SESSION['name'] = $user['name'];
-            $_SESSION['email'] = $user['email'];
 
-            if ($user['role'] === 'admin'){
-                header("Location: admin.php");
-            }else{
-                header("Location: ../employee/employee.php");
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['name'] = $user['name'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['role'] = $user['role'];
+
+            switch ($user['role']) {
+                case 'Admin':
+                    header("Location: admin.php");
+                    break;
+                case 'Validate Officer':
+                    header("Location: ../employee/verification.php");
+                    break;
+                case 'Processing Officer':
+                    header("Location: ../employee/process.php");
+                    break;
+                case 'Document Signatory Officer':
+                    header("Location: ../employee/signing.php");
+                    break;
+                case 'Cashier':
+                    header("Location: ../employee/Cashier.php");
+                    break;
+                case 'Releasing Clerk':
+                    header("Location: ../employee/releasing.php");
+                    break;
+                default:
+                    header("Location: ../employee/employee.php"); // fallback
+                    break;
             }
             exit();
+        } else {
+            // Password is incorrect
+            $_SESSION['login_error'] = 'Incorrect password.';
         }
+    } else {
+        // Username not found
+        $_SESSION['login_error'] = 'Account does not exist.';
     }
-}
-    $_SESSION['login_error'] = 'Incorrect email or password';
-    $_SESSION['active_form'] = 'login';
-    exit();
-?>
 
+    $_SESSION['active_form'] = 'login';
+    header("Location: ../../CivilRegistry/index.php");
+    exit();
+}
 

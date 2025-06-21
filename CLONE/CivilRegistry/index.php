@@ -1,3 +1,12 @@
+<?php
+session_start();
+$loginError = '';
+if (isset($_SESSION['login_error'])) {
+    $loginError = $_SESSION['login_error'];
+    unset($_SESSION['login_error']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,6 +72,21 @@
             </form>
         </div>
     </div>
+
+            <?php if (!empty($loginError)): ?>
+        <div id="error-popup" class="popup-overlay">
+            <div class="popup-content active">
+                <span class="close-btn" onclick="closeErrorPopup()">&times;</span>
+                <p><?= htmlspecialchars($loginError) ?></p>
+            </div>
+        </div>
+
+        <script>
+        function closeErrorPopup() {
+            document.getElementById("error-popup").style.display = "none";
+        }
+        </script>
+        <?php endif; ?>
 
     
     <!----Content----->
@@ -171,5 +195,18 @@
         </div>
     </footer>
     <script src="index.js"></script>
+
+        <script>
+    window.addEventListener("DOMContentLoaded", function () {
+        <?php if (!empty($loginError)): ?>
+            // Show the login popup
+            document.getElementById("login-popup").style.display = "flex";
+
+            // Optionally: Show error popup too
+            document.getElementById("error-popup").style.display = "flex";
+        <?php endif; ?>
+    });
+    </script>
+
 </body>
 </html>

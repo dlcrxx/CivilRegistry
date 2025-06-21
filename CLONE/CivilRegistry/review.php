@@ -13,6 +13,16 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>eSertipiko Marikina: Online Registration for Civil Documents</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "jSlqx2FnCw9rucgTM",
+      });
+   })();
+</script>
 </head>
 <body>
       <!----Header----->
@@ -55,7 +65,7 @@ session_start();
             </div>
         <div class="review-content">
             <div class="personal-info">
-                <form action="data-submit.php" method="post">
+                <form action="payment-method.php" method="post">
                     <h3>Personal Information</h3>
                     <p><strong>Type of Document:</strong> <?= htmlspecialchars( $_SESSION['typeOfcert']) ?></p>
                     <p><strong>Sex:</strong> <?= htmlspecialchars($_SESSION['sex']) ?></p>
@@ -104,14 +114,12 @@ session_start();
                     <p><strong>Barangay:</strong> <?= htmlspecialchars($_SESSION['selectBarangay']) ?></p>
                     <p><strong>Contact Number:</strong> <?= htmlspecialchars($_SESSION['contact']) ?></p>
                     <p><strong>Email Address:</strong> <?= htmlspecialchars($_SESSION['email-address']) ?></p>
-                    <p><strong>Payment Method:</strong> <?= htmlspecialchars($_SESSION['payment']) ?></p>
-                    <p><strong>Control Number:</strong> <?= htmlspecialchars($_SESSION['controlNum']) ?></p>
                 </div>
                    
 
                 <input type="hidden" name="recipient_name" value="<?= htmlspecialchars($_SESSION['recipient-name']) ?>">
                 <input type="hidden" name="type_of_document" value="<?= htmlspecialchars($_SESSION['typeOfcert']) ?>">
-                <input type="hidden" name="referenceNum" value="<?= htmlspecialchars($_SESSION['referenceNum']) ?>">
+
 
                 <div class="buttons">
                     <input type="button" value="Back" id="review-back-btn">

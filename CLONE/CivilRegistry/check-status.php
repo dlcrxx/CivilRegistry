@@ -167,28 +167,28 @@
         <!-- STATUS TRACKER CARDS -->
         <section class="status-cards">
             <div class="card">
-                <h4>Waiting for Confirmation</h4>
-                <p>Your request has been received. We're verifying the data and will update you shortly.</p>
+                <h4>Received</h4>
+                <p>The request has been successfully submitted and recorded in the system..</p>
             </div>
             <div class="card">
-                <h4>Scheduled for Issuance – Walk-In</h4>
-                <p>Your document is being prepared. You may pick it up on the indicated date.</p>
+                <h4>Under Verification</h4>
+                <p>The submitted documents are currently being checked for accuracy and authenticity.</p>
             </div>
             <div class="card">
-                <h4>Scheduled for Issuance – Delivery</h4>
-                <p>Your document is being prepared and will be sent via the tracked delivery date.</p>
+                <h4>Processing</h4>
+                <p>The request is actively being processed by the appropriate office or personnel.</p>
             </div>
             <div class="card">
-                <h4>Copy Ready for Pick-Up</h4>
-                <p>Your document is now ready. You may now visit the issuing office.</p>
+                <h4>For Approval</h4>
+                <p>The request is pending review by an authorized signatory or has already been approved.</p>
             </div>
             <div class="card">
-                <h4>Copy Out for Delivery</h4>
-                <p>Your request has been dispatched and will arrive via the next day delivery service.</p>
+                <h4>For Signing</h4>
+                <p>The documents are awaiting official signature or are ready to be picked up/delivered.</p>
             </div>
             <div class="card">
-                <h4>Request Completed</h4>
-                <p>Your request has been successfully completed and closed.</p>
+                <h4>Released</h4>
+                <p>The documents have been officially released, delivered, or claimed by the recipient.</p>
             </div>
         </section>
 

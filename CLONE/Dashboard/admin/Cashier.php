@@ -1,14 +1,9 @@
 <?php
-include '../admin/dbconnection.php';
-
 // Sample data if not set yet (for testing)
 if (!isset($_SESSION['requests'])) {
     $_SESSION['requests'] = [
-        ['id'=>1, 'recipient_name'=>'Juan Dela Cruz', 'type_of_document'=>'Birth Certificate', 'reference_number'=>'3803096908', 'status'=>'Released'],
-        ['id'=>2, 'recipient_name'=>'Maria Santos', 'type_of_document'=>'Death Certificate', 'reference_number'=>'1245519081', 'status'=>'Under Verification'],
-        ['id'=>3, 'recipient_name'=>'Bronny James', 'type_of_document'=>'Cenomar', 'reference_number'=>'9091275829', 'status'=>'For Approval'],
-        ['id'=>4, 'recipient_name'=>'Joshua Disgrasya', 'type_of_document'=>'Marriage Certificate', 'reference_number'=>'1891057295', 'status'=>'For Signing'],
-        ['id'=>5, 'recipient_name'=>'John Roxas', 'type_of_document'=>'Marriage Certificate', 'reference_number'=>'8201759391', 'status'=>'Processing']
+      ['id'=>1, 'recipient_name'=>'Juan Dela Cruz', 'type_of_document'=>'Birth Certificate','transactionmode' => 'Walk-in', 'modeofpayment' => 'Over the Counter','reference_number'=>'ABC123', 'status'=>'Pending'],
+        ['id'=>2, 'recipient_name'=>'Maria Santos', 'type_of_document'=>'Marriage Certificate','transactionmode' => 'Delivery', 'modeofpayment' => 'Gcash','reference_number'=>'XYZ789', 'status'=>'Paid'],
     ];
 }
 ?>
@@ -22,52 +17,25 @@ if (!isset($_SESSION['requests'])) {
   <link rel="stylesheet" href="../admin.css" />
   <link rel="icon" href="../../images/android-chrome-192x192.png" />
   <link rel="stylesheet" href="../../CivilRegistry/style.css" />
-  <style>
-    /* Simple modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0; right: 0; bottom: 0;
-      background-color: rgba(0,0,0,0.5);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background: white;
-      padding: 20px;
-      border-radius: 6px;
-      max-width: 400px;
-      width: 90%;
-    }
-    .modal-close {
-      float: right;
-      cursor: pointer;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .modal-header {
-      margin-bottom: 15px;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    button {
-      cursor: pointer;
-    }
-  </style>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
   <div class="dashboard-page">
-      <aside class="sidebar">
-        <a href="employee.php" title="Profile">👤</a>
-        <a href="logout.php" title="Logout">⚙️</a>
-      </aside>
+       <aside class="sidebar">
+      <a href="admin.php" title="Profile"><i class="fa-solid fa-user"></i></a>
+      <a href="new-account.php" title="Create Account"><i class="fa-solid fa-file-circle-plus"></i></a>
+      <a href="verification.php" title="Verification"><i class="fa-solid fa-circle-check"></i></a>
+      <a href="process.php" title="Process"><i class="fa-solid fa-bars-progress"></i></a>
+      <a href="Cashier.php" title="Cashier"><i class="fa-solid fa-coins"></i></a>
+      <a href="signing.php" title="Document Signatory"><i class="fa-solid fa-file-signature"></i></a>
+       <a href="releasing.php" title="Logout"><i class="fa-solid fa-truck-ramp-box"></i></a>
+      <a href="logout.php" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+    </aside>
 
     <main class="dashboard">
-      <h2>Welcome,  <?= isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Processing Officer'; ?>!</h2>
       <div class="dashboard-content">
-        <h3>Requests Records</h3>
+        <h3>Payment Records</h3>
         <form method="GET" style="margin-bottom: 20px;">
           <input type="text" name="search" placeholder="Search by name, email, or address"
             value=""
@@ -84,6 +52,8 @@ if (!isset($_SESSION['requests'])) {
               <th>ID</th>
               <th>Name</th>
               <th>Type of Document</th>
+              <th>Transaction Mode</th>
+              <th>Mode of Payment</th>
               <th>Reference Number</th>
               <th>Status</th>
               <th>Actions</th>
@@ -98,6 +68,8 @@ if (!isset($_SESSION['requests'])) {
                 <td><?= htmlspecialchars($client['id']) ?></td>
                 <td><?= htmlspecialchars($client['recipient_name']) ?></td>
                 <td><?= htmlspecialchars($client['type_of_document']) ?></td>
+                <td><?= htmlspecialchars($client['transactionmode']) ?></td>
+                <td><?= htmlspecialchars($client['modeofpayment']) ?></td>
                 <td><?= htmlspecialchars($client['reference_number']) ?></td>
                 <td class="status-cell"><?= htmlspecialchars($client['status']) ?></td>
                 <td>
@@ -138,12 +110,9 @@ if (!isset($_SESSION['requests'])) {
         <label for="statusSelect">Status:</label>
         <select id="statusSelect" name="status" required>
           <option value="">-- Select Status --</option>
-          <option value="Received / Filed">Received / Filed</option>
-          <option value="Under Verification / For Validation">Under Verification / For Validation</option>
-          <option value="Processing / In Progress">Processing / In Progress</option>
-          <option value="For Approval / Approved">For Approval / Approved</option>
-          <option value="For Signing / Ready for Release">For Signing / Ready for Release</option>
-          <option value="Released / Delivered / Claimed">Released / Delivered / Claimed</option>
+          <option value="Pending">Pending</option>
+          <option value="Unpaid">Unpaid</option>
+
         </select>
         <br/><br/>
         <button type="submit">Save</button>
@@ -239,6 +208,11 @@ if (!isset($_SESSION['requests'])) {
         }
       });
     });
+      window.addEventListener('pageshow', function (event) {
+    if (event.persisted || (window.performance && performance.getEntriesByType("navigation")[0].type === "back_forward")) {
+      window.location.reload();
+    }
+  });
   </script>
   <script src="emp.js"></script>
 </body>
