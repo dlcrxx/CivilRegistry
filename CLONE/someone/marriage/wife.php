@@ -65,18 +65,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         </div>
         <form method="post" action="">
             <div class="form-p">
-                <p>Wife Information</p>
+                <p>Spouse Information</p>
             </div>
             <div class="form-group">
-                <label class="input-label" id="spouse-first-name-label">Wife First Name</label>
-                <input class="input-value" type="text" id="wife-first-name" placeholder="First name" name="wife-first-name" autocomplete="off"> 
+                <label class="input-label" id="spouse-first-name-label">Spouse First Name</label>
+                <input class="input-value" type="text" id="wife-first-name" placeholder="First name" name="wife-first-name" autocomplete="off">
             </div>
              <div class="form-group">
-                <label class="input-label" id="spouse-middle-name-label">Wife Middle Name</label>
+                <label class="input-label" id="spouse-middle-name-label">Spouse Middle Name</label>
                 <input class="input-value" type="text" id="wife-middle-name" placeholder="Middle name" name="wife-middle-name" autocomplete="off">
             </div>
              <div class="form-group">
-                <label class="input-label" id="spouse-last-name-label">Wife Last Name</label>
+                <label class="input-label" id="spouse-last-name-label">Spouse Last Name</label>
                 <input class="input-value" type="text" id="wife-last-name" placeholder="Last name" name="wife-last-name" autocomplete="off">
             </div>
               <div class="submit-btn-birth">
