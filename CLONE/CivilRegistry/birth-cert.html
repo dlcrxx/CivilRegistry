@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="android-chrome-192x192.png">
+  <title>PSA Birth Certificate | eSertipiko Marikina</title>
+  <link rel="icon" href="../images/android-chrome-192x192.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <title>PSA Birth Certificate | eSertipiko Marikina</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
   <style>
-      .first_view-birth {
+    
+    .first_view {
       height: 25vh;
       width: 100vw;
       background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('https://pilipinomirror.com/wp-content/uploads/2024/11/marikina-city.jpg');
@@ -23,56 +25,43 @@
       position: relative;
       text-align: center;
       padding: 0 20px;
-      overflow: hidden;
     }
-
     .fv-text {
+      max-width: 960px;
       color: #fff;
-      position: absolute;
-      top: 25%;
+      position: relative;
+      top: 19px;
     }
-
-    .first_view-birth h1 {
-      color: #fff;
-      font-size: 30px;
+    .first_view h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1;
     }
-
-    .first_view-birth p {
+    .first_view p {
       color: #e6e3e3;
       font-size: 18px;
-      width: 60rem;
-      margin-top: 10px;
+      line-height: 1.4;
     }
-
     .content-box {
-        max-width: 600px;
-        margin: 40px auto;
-        padding: 0 20px;
-        text-align: justify;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: justify;
     }
     .content-box img {
-        width: 100%;        
-        max-width: 600px;  
-        height: auto;       
-        display: block;
-        margin-bottom: 20px;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin-bottom: 20px;
     }
-    .content-box h2 {
-        font-size: 28px; 
-        margin-bottom: 5px;
-        }
-
-    .content-box p {
-        font-size: 16px; /* Adjust this as needed */
-        line-height: 1.6;
-        color: #363636;
-        }
 
   </style>
 </head>
 <body>
-<!----Header----->
-    <div class="sticky-header">
+
+ <div class="sticky-header">
     <section class="header">
         <div class="logo">
             <h1><a href="index.php">eSertipiko Marikina</a></h1>
@@ -81,7 +70,7 @@
             <nav>
                 <ul>
                     <li><a href="check-status.php" class="select">Check Status</a></li>
-                    <li><a href="payment-method.php" class="select">Payment Method</a></li>
+                    <li><a href="payments.html" class="select">Payment Method</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Civil Registry Documents</a>
                         <div class="dropdown-box">
@@ -94,23 +83,20 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Resources</a>
                          <div class="dropdown-box">
-                            <a href="#">News & Announcement</a>
-                            <a href="#">Delivery Reminder</a>
+                            <a href="faqs-ordering.html">FAQ</a>
+                            <a href="update.html">News & Announcement</a>
                             <a href="#">Contacts</a>
                         </div>
                     </li>
                 </ul>
             </nav>
-                <div>
-                    <i class="bi bi-person-fill"></i>
-                </div>
         </div>
     </section>
     </div>
 
   <!-- Hero Section -->
-  <section class="first_view-birth">
-    <div class="fv-text-birth">
+  <section class="first_view">
+    <div class="fv-text">
       <h1>About the PSA Birth Certificate</h1>
       <p>Learn everything you need to know about getting your PSA Birth Certificate—how to apply, how it will be delivered, available payment methods, and how your information is kept safe.</p>
     </div>
@@ -133,10 +119,127 @@
       <br><br>
       A complete guide is provided to help you apply for your PSA birth certificate—whether online or in person—including step-by-step instructions, payment details, and delivery timelines to ensure a smooth and hassle-free experience.
     </p>
+        <div style="margin-top: 40px;">
+    <h2 style="margin-bottom: 0;">Documentary Requirements for PSA Birth Certificate Application
+        </h2>
+    <p style="margin-top: 4px; font-style: italic; font-size: 16px;">
+      (Walk-In Application via eSertipiko Marikina)
+    </p>
+        <br>
+        <h3>Who Can Apply</h3>
+        <p>You or your authorized representative can request a PSA Birth Certificate in person at the nearest PSA CRS Outlet. Just follow the procedures and prepare the required documents beforehand.</p>
+        <br>
+        <h3>Primary Requirements</h3>
+        <ul style="margin-left: 20px;">
+          <li><strong>One Valid Government-Issued ID</strong><br>
+            Must be presented by the requester. If applying for another person, IDs of both requester and document owner are required. Accepted IDs include:
+            <ul style="margin-left: 20px; list-style-type: circle;">
+              <li>Philippine National ID / ePhilID</li>
+              <li>Philippine Passport</li>
+              <li>Driver’s License (LTO)</li>
+              <li>PRC ID</li>
+              <li>SSS/GSIS UMID</li>
+              <li>Voter’s ID (COMELEC)</li>
+              <li>Postal ID</li>
+              <li>Senior Citizen ID</li>
+              <li>OFW ID / OWWA ID</li>
+              <li>NBI / Police Clearance</li>
+              <li>Barangay ID with photo and signature</li>
+              <li>PWD ID</li>
+              <li>TIN Card with photo and signature</li>
+              <li>School ID (currently enrolled, 18+ only)</li>
+              <li>Company ID from BSP/SEC/IC-registered companies</li>
+            </ul>
+          </li>
+          <li><strong>For foreign nationals:</strong><br>
+            Passport and any of the following:
+            <ul style="margin-left: 20px; list-style-type: circle;">
+              <li>Alien Certification of Registration (ACR I-card)</li>
+              <li>Immigrant Certificate of Registration</li>
+              <li>Special Resident Retiree Visa</li>
+            </ul>
+          </li>
+          <li><strong>Authorization Letter (if requesting for someone else)</strong><br>
+            Required unless you are:
+            <ul style="margin-left: 20px; list-style-type: circle;">
+              <li>The parent or spouse of the owner</li>
+              <li>A direct descendant</li>
+              <li>The legal guardian (for minors)</li>
+            </ul>
+          </li>
+        </ul>
+         <br>
+        <h3>Walk-In Application Procedure</h3>
+        <ol style="margin-left: 20px;">
+          <li>Book an appointment at the PSA Online Appointment System.</li>
+          <li>Visit your selected PSA CRS Outlet (e.g., in Marikina) on your appointment schedule.</li>
+          <li>Present your CRS Appointment Slip (printed/digital) at the entrance.</li>
+          <li>Get your Application Form (AF) and Queue Ticket Number (QTN).</li>
+          <li>Proceed to the window and present:
+            <ul style="margin-left: 20px; list-style-type: disc;">
+              <li>Completed AF</li>
+              <li>Valid IDs</li>
+              <li>Authorization letter (if applicable)</li>
+              <li>Required payment</li>
+            </ul>
+          </li>
+          <li>Collect your Official Receipt (OR).</li>
+          <li>Return on the scheduled release date, and present:
+            <ul style="margin-left: 20px; list-style-type: disc;">
+              <li>OR</li>
+              <li>Valid IDs</li>
+              <li>Authorization letter/Special Power of Attorney (if applicable)</li>
+            </ul>
+          </li>
+        </ol>
+         <br>
+        <h3>Processing Time and Fees</h3>
+        <ul style="margin-left: 20px;">
+          <li><strong>Fee:</strong> ₱155.00 per copy</li>
+          <li><strong>Processing Time:</strong> Usually 1–2 working days (may vary depending on outlet volume)</li>
+        </ul>
+         <br>
+        <h3>Important Reminders</h3>
+        <ul style="margin-left: 20px;">
+          <li>Arrive 30 minutes early for your appointment.</li>
+          <li>Ensure all IDs are valid and names are correctly matched.</li>
+          <li>Appointment booking is free and non-transferable.</li>
+          <li>Authorized representatives cannot assign their authority to others.</li>
+          <li>Each representative may only request for up to two unrelated persons.</li>
+          <li>Minors are not allowed to book appointments.</li>
+          <li>Transact only with authorized PSA or eSertipiko Marikina personnel.</li>
+        </ul>
 
+        <h2 style="margin-top: 40px;">PSA Frequently Asked Questions</h2>
+         <br>
+       <p><strong>Is the Certificate of Live Birth the same as a PSA Birth Certificate?</strong><br><br>
+        No. The Certificate of Live Birth is issued by the hospital and is only used for data entry purposes. It is an unofficial document that confirms you were medically alive at the time of birth. Only the PSA Birth Certificate is considered a legal and official document issued by the government.<br><br>
+        <em>(Hindi. Ang Certificate of Live Birth ay inilalabas ng ospital at ginagamit lamang para sa data entry o pagsumite ng impormasyon sa gobyerno. Isa itong hindi opisyal na dokumento na nagpapatunay na ang sanggol ay buhay nang ipanganak. Ang PSA Birth Certificate lamang ang itinuturing na legal at opisyal na dokumento na inilalabas ng gobyerno.)</em>
+        </p><br>
+
+        <p><strong>Does the PSA have birth certificate records for individuals born before 1945?</strong><br><br>
+        If the individual was born before 1945, the PSA may not have a record in its archives. In such cases, the PSA will issue a Negative Results Certification, which indicates that no record was found. This document can be used to inquire with the Local Civil Registrar where the birth was originally registered.<br><br>
+        <em>(Kung ang isang tao ay ipinanganak bago ang 1945, maaaring walang record ito sa archives ng PSA. Sa ganitong kaso, maglalabas ang PSA ng tinatawag na Negative Results Certification, na nagpapatunay na walang natagpuang record. Maaari mong gamitin ang dokumentong ito upang magtanong o mag-follow-up sa Local Civil Registrar kung saan maaaring nairehistro ang kapanganakan.)</em>
+        </p><br>
+
+        <p><strong>How can I correct typographical errors or incorrect information on my birth certificate?</strong><br><br>
+        The correction process depends on the type of error. Minor errors, such as incorrect gender or birth date, are considered clerical or typographical and can be corrected by filing a petition at the Local Civil Registrar (LCRO) where the birth was registered. Major corrections, such as changes to your name, nationality, citizenship, parent’s name, middle name, birth year, or legitimacy status, require a court proceeding.<br><br>
+        <em>(Depende ito sa uri ng error. Ang mga minor errors (halimbawa: maling kasarian o petsa ng kapanganakan) ay tinuturing na clerical o typographical at maaaring itama sa pamamagitan ng pagsusumite ng petition sa Local Civil Registrar (LCRO) kung saan ito unang nairehistro. Samantala, ang mga major corrections (halimbawa: pagbabago ng pangalan, nasyonalidad, pangalan ng magulang, middle name, taon ng kapanganakan, o status ng pagiging lehitimo) ay nangangailangan ng court proceeding o proseso sa korte.)</em>
+        </p><br>
+
+        <p><strong>Do PSA Birth Certificates have an expiration date?</strong><br><br>
+        PSA-issued birth certificates do not have an expiration date. However, some agencies, such as the Department of Foreign Affairs and certain embassies, may require a copy that was issued within the last six months.<br><br>
+        <em>Walang expiration ang PSA-issued birth certificate. Habambuhay itong valid. Gayunpaman, may ilang ahensya—gaya ng Department of Foreign Affairs (DFA) o ilang embahada—na nangangailangan ng kopyang inilabas sa loob ng huling anim (6) na buwan.</em>
+        </p><br>
+
+        <p><strong>Why did I receive a Negative Certification instead of the birth certificate I requested?</strong><br><br>
+        A Negative Certification means that the PSA was not able to locate any record of your birth in its digital or physical archives. This may occur if the birth record was never submitted to the PSA. You may use the Negative Certification to follow up with the Local Civil Registrar where the birth may have been originally recorded.<br><br>
+        <em>(Ibig sabihin nito ay hindi nakita ng PSA ang iyong record sa kanilang digital o physical archives. Karaniwan itong nangyayari kung hindi naisumite ang birth record sa PSA. Maaari mong gamitin ang Negative Certification upang mag-follow-up sa Local Civil Registrar kung saan posibleng nairehistro ang kapanganakan.)</em>
+        </p>
+  </div>
   </div>
    
-   <footer class="footer">
+  <footer class="footer">
         <div class="footer-container">
             <div class="contact-us">
                 <p class="footer-title">Contact us</p>
@@ -165,7 +268,7 @@
         <div class="copyright">
             <p>Copyright <i class="bi bi-c-circle"></i> eSertipiko Marikina 2025. All rights reserved.</p>
         </div>
-    </footer> 
-    <script src="index.js"></script>
+    </footer>
+<script src="index.js"></script>
 </body>
 </html>

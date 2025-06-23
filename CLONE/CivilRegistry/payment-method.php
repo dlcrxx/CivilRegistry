@@ -56,8 +56,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">Resources</a>
                         <div class="dropdown-box">
+                             <a href="faqs-ordering.html">FAQ</a>
                             <a href="update.html">News & Announcement</a>
-                            <a href="delivery.html">Delivery Reminder</a>
                             <a href="#">Contacts</a>
                         </div>
                     </li>

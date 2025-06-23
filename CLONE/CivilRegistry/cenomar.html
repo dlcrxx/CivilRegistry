@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PSA CENOMAR | eSertipiko Marikina</title>
-  <link rel="icon" href="android-chrome-192x192.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-
+  <title>PSA Birth Certificate | eSertipiko Marikina</title>
+  <link rel="icon" href="../images/android-chrome-192x192.png">
+  <link href="style.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
-    .first_view-cenomar {
+    .first_view {
       height: 25vh;
       width: 100vw;
       background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('https://pilipinomirror.com/wp-content/uploads/2024/11/marikina-city.jpg');
@@ -23,60 +22,51 @@
       position: relative;
       text-align: center;
       padding: 0 20px;
-      overflow: hidden;
     }
-
-    .fv-text-cenomar {
+    .fv-text {
+      max-width: 960px;
       color: #fff;
-      position: absolute;
-      top: 25%;
+      position: relative;
+      top: 19px;
     }
-
-    .first_view-cenomar h1 {
-      color: #fff;
-      font-size: 30px;
+    .first_view h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1;
     }
-
-    .first_view-cenomar p {
+    .first_view p {
       color: #e6e3e3;
       font-size: 18px;
-      width: 60rem;
-      margin-top: 10px;
+      line-height: 1.4;
     }
-
     .content-box {
-        max-width: 600px;
-        margin: 40px auto;
-        padding: 0 20px;
-        text-align: justify;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: justify;
     }
     .content-box img {
-        width: 100%;        
-        max-width: 600px;  
-        height: auto;       
-        display: block;
-        margin-bottom: 20px;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin-bottom: 20px;
     }
     .content-box h2 {
-        font-size: 28px; 
-        margin-bottom: 3px;
+      font-size: 28px;
+      margin-bottom: 5px;
     }
-      
-    .overview-intro {
-        font-size: 20px;
-        margin-bottom: 15px;
-        color: #222;
-    }
-   
     .content-box p {
-        font-size: 16px; /* Adjust this as needed */
-        line-height: 1.6;
-        color: #363636;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #363636;
     }
   </style>
 </head>
 <body>
-  <!----Header----->
+
+ <!----Header----->
     <div class="sticky-header">
     <section class="header">
         <div class="logo">
@@ -86,7 +76,7 @@
             <nav>
                 <ul>
                     <li><a href="check-status.php" class="select">Check Status</a></li>
-                    <li><a href="payment-method.php" class="select">Payment Method</a></li>
+                    <li><a href="payments.html" class="select">Payment Method</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Civil Registry Documents</a>
                         <div class="dropdown-box">
@@ -99,23 +89,20 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" class="select">Resources</a>
                          <div class="dropdown-box">
-                            <a href="#">News & Announcement</a>
-                            <a href="#">Delivery Reminder</a>
+                            <a href="faqs-ordering.html">FAQ</a>
+                            <a href="update.html">News & Announcement</a>
                             <a href="#">Contacts</a>
                         </div>
                     </li>
                 </ul>
             </nav>
-                <div>
-                    <i class="bi bi-person-fill"></i>
-                </div>
         </div>
     </section>
     </div>
 
   <!-- Hero Section -->
-  <section class="first_view-cenomar">
-    <div class="fv-text-cenomar">
+  <section class="first_view">
+    <div class="fv-text">
       <h1>About the PSA CENOMAR</h1>
       <p>Learn everything you need to know about getting your CENOMAR—how to apply, delivery options, accepted payment methods, and how your personal information is protected.</p>
     </div>
@@ -124,21 +111,146 @@
   <!-- Overview Content -->
   <div class="content-box">
     <h2>PSA CENOMAR</h2>
-    <p class="overview-intro">Overview of the PSA CENOMAR</p>
+    <p>Overview of the PSA CENOMAR</p>
+    <br>
     <img src="https://psahelpline.ph/img/civil-registry/cenomar/banner.jpeg" alt="PSA CENOMAR Image">
     <p>
-      The PSA CENOMAR (Certificate of No Marriage Record) is an essential document issued by the Philippine Statistics Authority that confirms a person has never been married. This certificate is a key requirement for many important life events such as applying for a marriage license, processing visa applications, and other legal or administrative matters.
+    The PSA CENOMAR (Certificate of No Marriage Record) is an essential document issued by the Philippine Statistics Authority that confirms a person has never been married. This certificate is a key requirement for many important life events such as applying for a marriage license, processing visa applications, and other legal or administrative matters.
+      <br><br>   
+    Also known as a Certificate of Singleness, the PSA CENOMAR is a vital part of wedding preparations and various official transactions, including employment and loan applications. It serves as official proof of your civil status and is often requested by government agencies and private institutions.
+      <br><br>
+    This guide will walk you through everything you need to know about obtaining your PSA CENOMAR—whether you choose to apply online or prefer to do a walk-in application. You’ll find step-by-step instructions for applying, details on delivery options, accepted payment methods, and tips to ensure your personal information is kept safe throughout the process. With this information, you can confidently and efficiently secure your PSA CENOMAR when you need it most.
+        
+    </p>
+    <br>
+    <div>
+    <h2 style="margin-bottom: 0;">Documentary Requirements for PSA CENOMAR (Certificate of No Marriage) Application</h2>
+    <p style="margin-top: 4px; font-style: italic; font-size: 16px;">
+      (Walk-In Application via eSertipiko Marikina)
+    </p>
+    <br>
+    <h3>Who Can Apply</h3>
+    <p>
+      You or your authorized representative may request a CENOMAR in person at the nearest PSA CRS Outlet. This document certifies that the person has no record of marriage in the Philippines.
       <br>
       <br>
-      Also known as a Certificate of Singleness, the PSA CENOMAR is a vital part of wedding preparations and various official transactions, including employment and loan applications. It serves as official proof of your civil status and is often requested by government agencies and private institutions.
+      <em>Ikaw o ang iyong awtorisadong kinatawan ay maaaring humiling ng CENOMAR nang personal sa pinakamalapit na PSA CRS Outlet. Ang dokumentong ito ay nagpapatunay na walang rekord ng kasal sa Pilipinas.</em>
+    </p>
+    <br>
+    <h3>Primary Requirements</h3>
+    <ul>
+      <li><strong>One Valid Government‑Issued ID</strong><br>
+        Required from the requester (and document owner if different). Accepted IDs include:
+        <ul>
+          <li>Philippine National ID / ePhilID</li>
+          <li>Philippine Passport</li>
+          <li>Driver’s License (LTO)</li>
+          <li>PRC ID</li>
+          <li>SSS / GSIS UMID</li>
+          <li>Voter’s ID (COMELEC)</li>
+          <li>Postal ID</li>
+          <li>Senior Citizen ID</li>
+          <li>OFW / OWWA ID</li>
+          <li>Seaman’s Book (MARINA)</li>
+          <li>Diplomat / Consular ID</li>
+          <li>NBI / Police Clearance</li>
+          <li>DSWD 4Ps ID / Certification</li>
+          <li>Barangay ID with photo and signature</li>
+          <li>PWD ID</li>
+          <li>IDs from National Government Offices or LGUs</li>
+          <li>TIN Card with photo and signature</li>
+          <li>School/Student ID (18+ currently enrolled students)</li>
+          <li>Company ID (from BSP/SEC/IC‑registered institutions)</li>
+        </ul>
+      </li>
+      <li><strong>For foreign nationals:</strong><br>
+        Passport and one of the following:
+        <ul>
+          <li>ACR I‑card</li>
+          <li>Immigrant Certificate of Registration</li>
+          <li>Special Resident Retiree Visa (PRA)</li>
+        </ul>
+      </li>
+      <li><strong>Authorization Letter</strong> (if applying for someone else)<br>
+        A signed authorization letter is required if the requester is not the document owner.
+      </li>
+    </ul>
+    <br>
+    <h3>Walk‑In Application Procedure</h3>
+    <ol>
+      <li>Book an appointment via the PSA Online Appointment System.</li>
+      <li>Go to your selected PSA CRS Outlet (e.g., Marikina) on your scheduled date/time.</li>
+      <li>Present your CRS Appointment Slip (printed or digital) to the Information Marshal.</li>
+      <li>Receive your Application Form (AF) and Queue Ticket Number (QTN).</li>
+      <li>At the window, submit:
+        <ul>
+          <li>Filled-out AF</li>
+          <li>Valid IDs</li>
+          <li>Authorization Letter / SPA (if applicable)</li>
+          <li>QTN and payment</li>
+        </ul>
+      </li>
+      <li>Collect your Official Receipt (OR) and count your change, if any.</li>
+      <li>Return on your scheduled release date, presenting:
+        <ul>
+          <li>OR</li>
+          <li>Valid IDs</li>
+          <li>Authorization Letter / SPA (if applicable)</li>
+        </ul>
+      </li>
+      <li>Verify that your document is correct and complete.</li>
+    </ol>
+    <br>
+    <h3>Processing Time and Fees</h3>
+    <ul>
+      <li><strong>Fee:</strong> ₱210.00 per copy</li>
+      <li><strong>Availability:</strong> Processing time varies; follow the scheduled release date on your receipt.</li>
+    </ul>
+    <br>
+    <h3>Important Reminders</h3>
+    <ul>
+      <li>Arrive 30 minutes early for your appointment.</li>
+      <li>Ensure all IDs are valid and names match correctly.</li>
+      <li>Appointment booking is free and non‑transferable.</li>
+      <li>Authorized representatives cannot delegate authority.</li>
+      <li>Each representative may only request for 2 unrelated individuals.</li>
+      <li>Minors are not allowed to book appointments.</li>
+      <li>Transact only with authorized PSA or eSertipiko Marikina personnel.</li>
+    </ul>
+    <br>
+    <h2>PSA Frequently Asked Questions</h2>
+    <br>
+    <p><strong>Can I request a CENOMAR online for a family member?</strong><br>
+     <br>
+        Yes, you can request online for parents or children. For other relatives, walk‑in is required.<br>
       <br>
+      <em>(Puwede kang mag-request ng CENOMAR online para sa iyong magulang o anak. Para sa ibang kamag-anak, kinakailangan ang walk‑in sa PSA CRS outlet.)</em>
+    </p>
+    <br>
+    <p><strong>Does a CENOMAR expire?</strong><br>
+     <br>
+        It has no fixed expiration date, but many agencies require it issued within the last six months.<br>
       <br>
-      This guide will walk you through everything you need to know about obtaining your PSA CENOMAR—whether you choose to apply online or prefer to do a walk-in application. You’ll find step-by-step instructions for applying, details on delivery options, accepted payment methods, and tips to ensure your personal information is kept safe throughout the process. With this information, you can confidently and efficiently secure your PSA CENOMAR when you need it most.
+      <em>(Walang tiyak na expiration ang CENOMAR, pero may ilang ahensya na humihingi ng kopyang hindi lalampas sa anim (6) na buwan mula sa date ng issue.)</em>
+    </p>
+    <br>
+    <p><strong>Why is a CENOMAR necessary?</strong><br>
+     <br>
+        It's required for a marriage license and used in various legal or identification processes.<br>
+      <br>
+      <em>(Kailangan ang CENOMAR para sa pagkuha ng marriage license at iba pang legal o identification purposes.)</em>
+    </p>
+    <br>
+    <p><strong>What if my CENOMAR has incorrect info?</strong><br>
+     <br> 
+        You must file a correction request at the Local Civil Registry Office (LCRO) where the record is registered. Submit supporting documents and pay applicable fees.<br>
+      <br>
+      <em>(Kung may mali sa iyong CENOMAR, maghain ka ng correction request sa LCRO kung saan ito unang nairehistro. Magdala ng mga dokumento at bayad na kailangan para sa correction.)</em>
     </p>
   </div>
+  </div>
    
-  <!-- New Footer -->
- <footer class="footer">
+    <footer class="footer">
         <div class="footer-container">
             <div class="contact-us">
                 <p class="footer-title">Contact us</p>
@@ -168,6 +280,6 @@
             <p>Copyright <i class="bi bi-c-circle"></i> eSertipiko Marikina 2025. All rights reserved.</p>
         </div>
     </footer>
-  <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
